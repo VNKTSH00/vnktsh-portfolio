@@ -36,12 +36,14 @@ Search each file for `EDIT:` comments — every placeholder is flagged. In short
    to add more apps.
 2. **`about.html`** — your real bio, skills, and timeline. Swap the `V` avatar
    div for a real `<img>` photo if you want one.
-3. **`contact.html`** — real GitHub / LinkedIn / X links (currently `#`).
-   Your email is already filled in from what I have on file — double check it's
-   the one you want public.
+3. **`contact.html`** — real GitHub / LinkedIn links, plus a direct
+   `mailto:support@vnktsh.com` entry — that inbox is the official contact
+   channel for the whole site.
 4. **Contact form** — currently points at a placeholder Formspree URL
-   (`YOUR_FORM_ID`) and will show a friendly "not connected yet" message until
-   you fix that. Two-minute setup:
+   (`YOUR_FORM_ID`). Until that's replaced, submitting the form opens a
+   pre-filled `mailto:support@vnktsh.com` in the visitor's email app instead
+   (see `js/main.js`), so the form still works end to end. Two-minute setup
+   to switch to a real inline POST instead:
    - Go to [formspree.io](https://formspree.io), sign up free, create a new form.
    - Copy the endpoint it gives you (`https://formspree.io/f/xxxxxxx`).
    - Paste it into the `action="..."` attribute of the `<form id="contact-form">`

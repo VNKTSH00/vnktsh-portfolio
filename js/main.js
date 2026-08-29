@@ -54,12 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const action = form.getAttribute('action');
 
-      // EDIT: until you connect a real form endpoint (see README), this
-      // just shows a friendly message instead of failing silently.
+      // EDIT: no Formspree endpoint configured yet (see README for the
+      // 2-minute setup) — fall back to opening a pre-filled email instead
+      // of failing silently, so the form still reaches support@vnktsh.com.
       if (!action || action.includes('YOUR_FORM_ID')) {
+        const name = form.querySelector('#name')?.value || '';
+        const email = form.querySelector('#email')?.value || '';
+        const reason = form.querySelector('#reason')?.value || '';
+        const message = form.querySelector('#message')?.value || '';
+        const subject = `Portfolio contact: ${reason || 'Message from vnktsh.com'}`;
+        const body = `${message}\n\n— ${name}${email ? ` (${email})` : ''}`;
+        window.location.href = `mailto:support@vnktsh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         status.textContent =
-          "Form isn't connected yet — see README for a 2-minute Formspree setup. Meanwhile, email me directly below.";
-        status.className = 'form-status show err';
+          "Opening your email app to send this to support@vnktsh.com…";
+        status.className = 'form-status show ok';
         return;
       }
 
