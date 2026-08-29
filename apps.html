@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apps — Venkatesh</title>
+  <meta name="description" content="Apps and projects built by Venkatesh, including MoneyBook." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">v</span>
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apps.html" class="active">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-1"></div>
+      <div class="container">
+        <span class="eyebrow"><span class="dot"></span> Coming soon to Google Play</span>
+        <h1>Things I'm <span class="gradient-text">building</span></h1>
+        <p>Every app here is something I made to solve a problem of my own first. Right now there's one — more will show up as they're ready.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="grid grid-1">
+
+          <!-- ===== MoneyBook ===== -->
+          <article class="app-card">
+            <div class="app-card-media" style="background: linear-gradient(135deg,#7c5cff,#3fd8ff);">
+              <span class="badge">Coming soon</span>
+              💰
+            </div>
+            <div class="app-card-body">
+              <h3>MoneyBook</h3>
+              <p>
+                A personal finance tracker for logging expenses, setting budgets, and
+                understanding where your money goes — without wrestling a spreadsheet.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Finance</span>
+                <span class="tag">Mobile</span>
+              </div>
+              <p class="form-note" style="margin-top:4px;">
+                Getting ready to launch — my Google Play developer account is currently under
+                verification. Store links will go live here as soon as it's approved.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Building something? Let's compare notes.</h2>
+          <p>Happy to talk shop about indie app development, design, or MoneyBook specifically.</p>
+          <a href="contact.html" class="btn btn-primary">Reach out</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

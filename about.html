@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Venkatesh</title>
+  <meta name="description" content="About Venkatesh — developer building MoneyBook and other small, useful apps." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">v</span>
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-2"></div>
+      <div class="container">
+        <span class="eyebrow"><span class="dot"></span> The person behind vnktsh.com</span>
+        <h1>A bit <span class="gradient-text">about me</span></h1>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="avatar">
+              <img src="assets/images/venkatesh-portrait.jpg" alt="Venkatesh" />
+            </div>
+          </div>
+
+          <div>
+            <h2>Hi, I'm Venkatesh 👋</h2>
+            <p>
+              I like building apps for myself to solve my own problems — and then sharing
+              them with other people who might have the same problem. Right now that's
+              <strong>MoneyBook</strong>, a personal finance app I'm getting ready to launch.
+            </p>
+            <p>
+              I care about clean interfaces, fast software, and actually finishing what I
+              start instead of letting it die after v1. This site is where I'll keep
+              collecting everything I build.
+            </p>
+
+            <h3 style="margin-top:40px;">What I work with</h3>
+            <div class="skill-list">
+              <span class="tag">Product design</span>
+              <span class="tag">Mobile apps</span>
+              <span class="tag">AI app development</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Versioning &amp; QA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BEYOND THE CODE ================= -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Beyond the code</h2>
+          <p>A few other things I spend my time on.</p>
+        </div>
+        <div class="life-grid">
+          <div class="life-card">
+            <div class="life-card-media">
+              <img src="assets/images/venkatesh-photography.jpg" alt="Photography" />
+            </div>
+            <div class="life-card-body">
+              <h3>📷 Photography</h3>
+              <p>I like being behind the camera as much as behind the code — always looking for the next good shot.</p>
+            </div>
+          </div>
+          <div class="life-card">
+            <div class="life-card-media icon-media" style="background: rgba(124,92,255,0.15); color:#a78bff;">🤖</div>
+            <div class="life-card-body">
+              <h3>AI app development</h3>
+              <p>Exploring what AI can build alongside me — from prototypes to actual shipped features.</p>
+            </div>
+          </div>
+          <div class="life-card">
+            <div class="life-card-media">
+              <img src="assets/images/venkatesh-adventure.jpg" alt="Outdoor adventure" />
+            </div>
+            <div class="life-card-body">
+              <h3>🥾 A little adventurous</h3>
+              <p>Happiest outdoors — hikes, new trails, and places I haven't been before.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Want to know more, or just say hello?</h2>
+          <p>I read every message that comes through the contact page.</p>
+          <a href="contact.html" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

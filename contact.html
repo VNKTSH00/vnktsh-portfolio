@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Venkatesh</title>
+  <meta name="description" content="Get in touch with Venkatesh." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">v</span>
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-3"></div>
+      <div class="container">
+        <span class="eyebrow"><span class="dot"></span> Usually reply within a couple of days</span>
+        <h1>Let's <span class="gradient-text">get in touch</span></h1>
+        <p>Got an idea for an app, ran into an issue with MoneyBook, or just want to say hi — all welcome. If it's a good idea, I might just build it.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container contact-grid">
+
+        <!-- Form -->
+        <div>
+          <!-- EDIT: sign up at https://formspree.io (free), create a form, then
+               replace YOUR_FORM_ID below with the ID they give you. See README. -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="reason">What's this about?</label>
+              <select id="reason" name="reason">
+                <option value="Just saying hi">Just saying hi</option>
+                <option value="App idea">An app idea — build this for me</option>
+                <option value="Issue / bug">An issue or bug I ran into</option>
+                <option value="Other">Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="What's on your mind? If it's an idea, tell me the problem you're trying to solve." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-note">Handled via a lightweight form service — no backend, no spam.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+        </div>
+
+        <!-- Direct links -->
+        <div>
+          <h2>Prefer somewhere else?</h2>
+          <p>Find me directly through any of these.</p>
+
+          <div class="social-list">
+            <a class="social-item" href="https://github.com/VNKTSH00" target="_blank" rel="noopener">
+              <span class="icon-tile" style="background: rgba(255,95,162,0.15); color:#ff8fc0;">🐙</span>
+              <div>
+                <strong>GitHub</strong>
+                <div class="footer-note">github.com/VNKTSH00</div>
+              </div>
+            </a>
+            <a class="social-item" href="https://www.linkedin.com/in/venkateshkathirvel/" target="_blank" rel="noopener">
+              <span class="icon-tile" style="background: rgba(255,159,67,0.15); color:#ffbf7f;">💼</span>
+              <div>
+                <strong>LinkedIn</strong>
+                <div class="footer-note">linkedin.com/in/venkateshkathirvel</div>
+              </div>
+            </a>
+          </div>
+
+          <h2 style="margin-top:40px;">Have an app idea?</h2>
+          <p>Seriously — if you're stuck solving a problem with a spreadsheet or ten open tabs, tell me about it through the form. That's exactly how MoneyBook started.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkatesh — Apps &amp; Projects</title>
+  <meta name="description" content="Personal portfolio of Venkatesh — indie apps and projects, including MoneyBook." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Venkatesh — Apps & Projects" />
+  <meta property="og:description" content="Indie apps and projects, including MoneyBook." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vnktsh.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">v</span>
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="container hero-inner">
+        <span class="eyebrow"><span class="dot"></span> Available for interesting projects</span>
+        <h1>Hey, I'm Venkatesh —<br />I build <span class="gradient-text">apps for myself</span>, then share them.</h1>
+        <p class="lead">
+          I like making apps that solve my own everyday problems — and if they help me,
+          chances are they'll help someone else too. Right now that's <strong>MoneyBook</strong>,
+          a personal finance app. This is where I'll keep collecting everything I build.
+        </p>
+        <div class="hero-actions">
+          <a href="apps.html" class="btn btn-primary">See my apps</a>
+          <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED APPS ================= -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured work</h2>
+          <p>The app I'm currently building and getting ready to launch.</p>
+        </div>
+
+        <div class="grid grid-1">
+          <!-- MoneyBook -->
+          <div class="app-card">
+            <div class="app-card-media" style="background: linear-gradient(135deg,#7c5cff,#3fd8ff);">
+              <span class="badge">Coming soon</span>
+              💰
+            </div>
+            <div class="app-card-body">
+              <h3>MoneyBook</h3>
+              <p>Track spending, set budgets, and see where your money actually goes — without the spreadsheet.</p>
+              <div class="app-links">
+                <a href="apps.html">Learn more →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY / VALUES ================= -->
+    <section class="section section-alt reveal">
+      <div class="blob blob-3"></div>
+      <div class="container">
+        <div class="section-head">
+          <h2>How I build</h2>
+          <p>A few things that show up in everything I ship.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">🎯</div>
+            <h3>Focused, not bloated</h3>
+            <p>Every app solves one problem well instead of trying to do everything.</p>
+          </div>
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(255,95,162,0.15); color:#ff8fc0;">⚡</div>
+            <h3>Fast &amp; simple</h3>
+            <p>Clean interfaces, quick load times, no unnecessary friction.</p>
+          </div>
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(255,159,67,0.15); color:#ffbf7f;">🔁</div>
+            <h3>Shipped &amp; maintained</h3>
+            <p>Versioned releases and real updates — not abandoned side projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Have an idea, feedback, or just want to say hi?</h2>
+          <p>I'm always happy to hear from people using — or thinking about building — small useful apps.</p>
+          <a href="contact.html" class="btn btn-primary">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
