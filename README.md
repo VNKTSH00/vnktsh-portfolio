@@ -39,16 +39,16 @@ Search each file for `EDIT:` comments — every placeholder is flagged. In short
 3. **`contact.html`** — real GitHub / LinkedIn links, plus a direct
    `mailto:support@vnktsh.com` entry — that inbox is the official contact
    channel for the whole site.
-4. **Contact form** — currently points at a placeholder Formspree URL
-   (`YOUR_FORM_ID`). Until that's replaced, submitting the form opens a
-   pre-filled `mailto:support@vnktsh.com` in the visitor's email app instead
-   (see `js/main.js`), so the form still works end to end. Two-minute setup
-   to switch to a real inline POST instead:
-   - Go to [formspree.io](https://formspree.io), sign up free, create a new form.
-   - Copy the endpoint it gives you (`https://formspree.io/f/xxxxxxx`).
-   - Paste it into the `action="..."` attribute of the `<form id="contact-form">`
-     in `contact.html`.
-   - Formspree's free tier is plenty for a personal site (50 submissions/month).
+4. **Contact form** — POSTs straight to [Web3Forms](https://web3forms.com),
+   which relays submissions server-side to `support@vnktsh.com`. No mailto:
+   involved, so it works for any visitor regardless of whether they have a
+   local email client configured. The access key lives in a hidden
+   `access_key` input in the `<form id="contact-form">` in `contact.html`
+   (Web3Forms access keys are meant to be public/client-side, so this is
+   safe to commit). To rotate the key or point it at a different inbox,
+   generate a new one at web3forms.com and swap the `value`. A hidden
+   `botcheck` checkbox (`.hidden-field` in `css/style.css`) is Web3Forms'
+   honeypot spam trap — leave it in the form.
 5. **Favicon/logo** — `assets/favicon.svg` is a simple gradient "v" monogram.
    Replace it with your own mark if you have one.
 6. **If MoneyBook collects personal data**, most app stores require a privacy

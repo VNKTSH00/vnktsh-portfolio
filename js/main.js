@@ -46,30 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Contact form (Formspree-style endpoint via fetch, no page reload) */
+  /* Contact form — POSTs to Web3Forms, which relays it to support@vnktsh.com
+     server-side. No mailto: involved, so it works for any visitor regardless
+     of whether they have a local email client configured. */
   const form = document.querySelector('#contact-form');
   const status = document.querySelector('.form-status');
   if (form && status) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const action = form.getAttribute('action');
-
-      // EDIT: no Formspree endpoint configured yet (see README for the
-      // 2-minute setup) — fall back to opening a pre-filled email instead
-      // of failing silently, so the form still reaches support@vnktsh.com.
-      if (!action || action.includes('YOUR_FORM_ID')) {
-        const name = form.querySelector('#name')?.value || '';
-        const email = form.querySelector('#email')?.value || '';
-        const reason = form.querySelector('#reason')?.value || '';
-        const message = form.querySelector('#message')?.value || '';
-        const subject = `Portfolio contact: ${reason || 'Message from vnktsh.com'}`;
-        const body = `${message}\n\n— ${name}${email ? ` (${email})` : ''}`;
-        window.location.href = `mailto:support@vnktsh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        status.textContent =
-          "Opening your email app to send this to support@vnktsh.com…";
-        status.className = 'form-status show ok';
-        return;
-      }
 
       const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
@@ -81,12 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
           body: new FormData(form),
           headers: { Accept: 'application/json' },
         });
-        if (res.ok) {
+        const data = await res.json().catch(() => null);
+        if (res.ok && data && data.success) {
           status.textContent = "Thanks! Your message is on its way — I'll reply soon.";
           status.className = 'form-status show ok';
           form.reset();
         } else {
-          throw new Error('Request failed');
+          throw new Error(data?.message || 'Request failed');
         }
       } catch (err) {
         status.textContent = 'Something went wrong sending that. Try emailing me directly below.';

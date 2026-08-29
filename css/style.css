@@ -564,6 +564,17 @@ img { max-width: 100%; display: block; }
   .contact-grid { grid-template-columns: 1fr; }
 }
 
+/* Honeypot field for the contact form's spam trap — kept in the DOM and
+   tab-order-excluded, just visually hidden, so real bots that don't
+   evaluate CSS still fill it in and get silently rejected by Web3Forms. */
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field {
   margin-bottom: 20px;
 }

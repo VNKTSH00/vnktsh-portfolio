@@ -49,9 +49,12 @@
 
         <!-- Form -->
         <div>
-          <!-- EDIT: sign up at https://formspree.io (free), create a form, then
-               replace YOUR_FORM_ID below with the ID they give you. See README. -->
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Sent via Web3Forms straight to support@vnktsh.com — see README. -->
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="3fc0d79d-a9b7-4895-894b-d0595de95e3e" />
+            <input type="hidden" name="subject" value="New message from vnktsh.com" />
+            <input type="hidden" name="from_name" value="vnktsh.com contact form" />
+            <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" />
             <div class="field">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required />
