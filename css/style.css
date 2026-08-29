@@ -152,12 +152,12 @@ img { max-width: 100%; display: block; }
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 11px 26px;
+  padding: 13px 30px;
   border-radius: 999px;
   background: var(--gradient);
   color: #0a0a14 !important;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1;
   white-space: nowrap;
 }
