@@ -25,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -35,6 +37,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -312,6 +316,7 @@ img { max-width: 100%; display: block; }
 .section {
   padding: 90px 0;
   position: relative;
+  overflow: hidden;
 }
 .section-head {
   text-align: center;
