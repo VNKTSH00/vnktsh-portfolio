@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Contact form — POSTs to Web3Forms, which relays it to support@vnktsh.com
+  /* Contact form — POSTs to Web3Forms, which relays it to support.vnktsh@proton.me
      server-side. No mailto: involved, so it works for any visitor regardless
      of whether they have a local email client configured. */
   const form = document.querySelector('#contact-form');
