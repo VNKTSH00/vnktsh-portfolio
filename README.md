@@ -13,8 +13,36 @@ vnktsh-portfolio/
 ├── 404.html            Not-found page
 ├── css/style.css        All styling (edit colors in :root at the top)
 ├── js/main.js             Mobile nav, scroll reveal, contact form handling
-└── assets/favicon.svg       Site icon
+├── assets/favicon.svg       Site icon
+└── apps/                     One folder per app, its own detail page(s)
+    ├── _template/               Copy this to scaffold a new app page
+    │   └── index.html
+    └── money-book/              MoneyBook's detail page (what it does, features)
+        └── index.html
 ```
+
+## Adding a new app
+
+Every app gets two things:
+
+1. **A card** on `apps.html` (and, if it's the currently-featured app, on
+   `index.html` too) — duplicate the `<article class="app-card">` block.
+2. **Its own detail page** at `apps/<app-slug>/index.html`, linked from that
+   card's `app-links` row (see how MoneyBook's card links to
+   `apps/money-book/index.html`). This is where "what it does / features"
+   content lives — it's a full page, not just a card blurb, so there's room
+   to actually explain the app.
+
+To scaffold a new one:
+
+```bash
+cp -r apps/_template apps/<app-slug>
+```
+
+Then open `apps/<app-slug>/index.html` and fill in every block marked
+`EDIT:` (title, pitch, feature cards, status). It already uses the same
+nav/footer/hero/card/CTA styling as the rest of the site — no new CSS
+needed unless the app genuinely needs a new layout.
 
 No build tools, no framework, no dependencies — just open `index.html` in a browser,
 or run a tiny local server so relative paths behave exactly like they will in

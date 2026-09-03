@@ -1,0 +1,156 @@
+<!doctype html>
+<!--
+  TEMPLATE — copy this whole apps/_template/ folder to apps/<app-slug>/
+  and fill in every block marked EDIT:. This becomes that app's own detail
+  page, opened from a "Learn more" link on its card in apps.html and (if
+  it's the featured app) index.html. See "Adding a new app" in README.md.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: title -->
+  <title>APP NAME — Venkatesh</title>
+  <!-- EDIT: one-sentence description -->
+  <meta name="description" content="APP NAME is a ... for ..." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/style.css?v=5" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../../index.html" class="logo">
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../apps.html" class="active">Apps</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-1"></div>
+      <div class="container">
+        <a href="../../apps.html" class="back-link">← Back to Apps</a>
+        <!-- EDIT: status eyebrow — "In development", "Coming soon", "Live now", etc. -->
+        <span class="eyebrow"><span class="dot"></span> In development</span>
+        <!-- EDIT: headline -->
+        <h1>APP NAME <span class="gradient-text">does the thing</span>.</h1>
+        <!-- EDIT: one-paragraph pitch -->
+        <p>
+          A short, honest description of the problem this app solves and how it solves it.
+        </p>
+        <div class="hero-actions">
+          <a href="#features" class="btn btn-primary">Explore features</a>
+          <a href="../../contact.html" class="btn btn-ghost">Get notified at launch</a>
+        </div>
+
+        <!-- EDIT: status banner — what stage it's at, or delete this block if not needed yet -->
+        <div class="status-banner">
+          <span class="icon-tile" style="background: rgba(63,216,255,0.15); color:#3fd8ff;">🚧</span>
+          <p>
+            <strong>Early days.</strong> This app is still being built —
+            check back here or <a href="../../contact.html" style="color: var(--accent-cyan); font-weight:600;">get in touch</a>
+            to hear when it's ready.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE HIGHLIGHTS ================= -->
+    <!-- EDIT: 3–6 top features. Reuse this card 3x per row (grid-3). -->
+    <section class="section reveal" id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>What it does</h2>
+          <p>The headline features, in short.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">✨</div>
+            <h3>Feature one</h3>
+            <p>One or two sentences on what it does and why it matters.</p>
+          </div>
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(255,95,162,0.15); color:#ff8fc0;">✨</div>
+            <h3>Feature two</h3>
+            <p>One or two sentences on what it does and why it matters.</p>
+          </div>
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(255,159,67,0.15); color:#ffbf7f;">✨</div>
+            <h3>Feature three</h3>
+            <p>One or two sentences on what it does and why it matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DEEPER FEATURE GROUP (optional) ================= -->
+    <!-- EDIT: duplicate this whole <section> for more feature categories, or delete it -->
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>A closer look</h2>
+          <p>More detail on how it works.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">🔧</div>
+            <h3>Detail one</h3>
+            <p>Body copy.</p>
+            <!-- EDIT: optional checklist — delete <ul> if not needed -->
+            <ul class="check-list">
+              <li>Point one</li>
+              <li>Point two</li>
+              <li>Point three</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-band">
+          <!-- EDIT: CTA copy -->
+          <h2>Want to try it early, or have feedback already?</h2>
+          <p>Happy to talk shop about this app, or add you to the list for launch.</p>
+          <a href="../../contact.html" class="btn btn-primary">Reach out</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="../../apps.html">Apps</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
