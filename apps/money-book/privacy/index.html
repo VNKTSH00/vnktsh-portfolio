@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoneyBook Privacy Policy — Venkatesh</title>
+  <meta name="description" content="How MoneyBook and moneybook.app collect, use, and protect your data." />
+  <meta name="theme-color" content="#0a0a14" />
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../../css/style.css?v=8" />
+
+  <style>
+    /* Page-scoped additions for the legal content — reuses the site's
+       tokens (--card, --card-border, --muted, --gradient) rather than
+       introducing a new palette. */
+    .legal {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .legal .updated {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .legal-entry {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .legal-entry:last-child { border-bottom: none; }
+    .legal-entry h2 {
+      font-size: 1.15rem;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .legal-entry h2 .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      color: transparent;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-weight: 700;
+    }
+    .legal-entry p { margin-bottom: 12px; }
+    .legal-entry p:last-child { margin-bottom: 0; }
+    .legal-entry strong { color: var(--text); }
+    .legal-entry a { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../../../index.html" class="logo">
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../../apps.html" class="active">Apps</a></li>
+        <li><a href="../../../about.html">About</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+        <li><a href="../../../contact.html" class="nav-cta">Let's talk</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-1"></div>
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to MoneyBook</a>
+        <span class="eyebrow"><span class="dot"></span> Legal</span>
+        <h1>Privacy <span class="gradient-text">Policy</span></h1>
+        <p>
+          Covers the MoneyBook app (iOS, Android, macOS, Windows) and
+          moneybook.app. Short version: your finances stay on your device
+          unless you turn on cloud sync, there's no analytics or ads, and
+          your data is never sold.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container legal">
+        <p class="updated">Effective 3 September 2026</p>
+
+        <div class="legal-entry">
+          <h2><span class="num">01</span> Offline-first by default</h2>
+          <p>Your transactions, categories, budgets, and attachments are stored locally on your device using an on-device database. We never see this data unless you explicitly turn on Backup &amp; Sync.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">02</span> Data collected in the app</h2>
+          <p><strong>If you never create an account:</strong> MoneyBook collects nothing about you. No analytics, no crash reporting, no ads, no trackers of any kind are built into the app.</p>
+          <p><strong>If you turn on Backup &amp; Sync:</strong> we create an account using the email address (and password, or Google/Apple sign-in) you provide, and your financial data is encrypted in transit and stored with our backend provider, Supabase, so it can sync across your devices. You can turn this off and delete your synced data at any time from Settings, or by emailing us (see Contact, below).</p>
+          <p><strong>Passcode &amp; biometric unlock:</strong> if you set an app passcode or enable Face ID / fingerprint unlock, that data is managed entirely by your device's secure storage and operating system. It never leaves your device and we never have access to it.</p>
+          <p><strong>Exports:</strong> if you export your data as CSV, Excel, or PDF, or attach a photo to a transaction, that file is created and shared directly from your device (e.g. via your device's share sheet) — it does not pass through our servers.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">03</span> Data collected on this website</h2>
+          <p>If you purchase MoneyBook Premium, we collect the email address you provide at checkout and generate a license key tied to it, so the app can verify your purchase. Payment is processed entirely by <a href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe</a> — we never receive or store your card details.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">04</span> Who we share data with</h2>
+          <p>We share data only with the service providers needed to run MoneyBook: <strong>Supabase</strong> (optional cloud sync and account authentication) and <strong>Stripe</strong> (payment processing for Premium purchases). We do not sell your data, and we do not share it with advertisers or data brokers.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">05</span> Retention &amp; deletion</h2>
+          <p>Local data lives on your device until you delete the app or clear it yourself. Synced data is kept until you disable Backup &amp; Sync or ask us to delete it. To request deletion of your account and any synced data, email <a href="mailto:support@moneybook.app">support@moneybook.app</a> and we'll remove it within 30 days.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">06</span> Security</h2>
+          <p>Data in transit to Supabase and Stripe is encrypted (TLS). Optional sync data is encrypted at rest by Supabase. Passcodes and biometric credentials are handled by your device's OS-level secure storage and never transmitted anywhere.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">07</span> Children's privacy</h2>
+          <p>MoneyBook is not directed at children under 13, and we do not knowingly collect data from them.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">08</span> Changes to this policy</h2>
+          <p>If we make material changes to this policy, we'll update the effective date above and, for significant changes, notify users in the app.</p>
+        </div>
+
+        <div class="legal-entry">
+          <h2><span class="num">09</span> Contact us</h2>
+          <p>Questions about this policy or your data? Email <a href="mailto:support@moneybook.app">support@moneybook.app</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+      <ul class="footer-links">
+        <li><a href="../../../apps.html">Apps</a></li>
+        <li><a href="../../../about.html">About</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../../../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
