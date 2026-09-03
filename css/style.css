@@ -695,13 +695,14 @@ img { max-width: 100%; display: block; }
 
 /* ---------- App detail pages (apps/<app>/index.html) ---------- */
 .back-link {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 6px;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin: 0 auto 28px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 .back-link:hover { color: var(--text); transform: translateX(-2px); }
