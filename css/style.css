@@ -439,7 +439,8 @@ img { max-width: 100%; display: block; }
   padding-top: 10px;
   flex-wrap: wrap;
 }
-.app-links a {
+.app-links a,
+.app-links .link-cta {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-cyan);
@@ -448,6 +449,10 @@ img { max-width: 100%; display: block; }
   gap: 4px;
 }
 .app-links a:hover { color: var(--accent-pink); }
+/* .link-cta is a plain span used when the whole .app-card is itself the
+   link (avoids an <a> nested inside an <a>) — highlight it whenever any
+   part of the card is hovered, not just the span's own small hit area. */
+a.app-card:hover .link-cta { color: var(--accent-pink); }
 
 /* ---------- About ---------- */
 .about-grid {
