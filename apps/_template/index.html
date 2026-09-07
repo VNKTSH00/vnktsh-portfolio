@@ -13,14 +13,14 @@
   <title>APP NAME — Venkatesh</title>
   <!-- EDIT: one-sentence description -->
   <meta name="description" content="APP NAME is a ... for ..." />
-  <meta name="theme-color" content="#0a0a14" />
+  <meta name="theme-color" content="#fbf6ec" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../../css/style.css?v=8" />
+  <link rel="stylesheet" href="../../css/style.css?v=9" />
 </head>
 <body>
 
@@ -34,7 +34,7 @@
         <li><a href="../../apps.html" class="active">Apps</a></li>
         <li><a href="../../about.html">About</a></li>
         <li><a href="../../contact.html">Contact</a></li>
-        <li><a href="../../contact.html" class="nav-cta">Let's talk</a></li>
+        <li><a href="../../contact.html" class="nav-cta">Say hello</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -55,6 +55,11 @@
         <p>
           A short, honest description of the problem this app solves and how it solves it.
         </p>
+        <!-- Keep the price line: free is the house rule, and stating it is the point. -->
+        <p style="max-width:580px;margin:0 auto 28px;">
+          It costs nothing, shows no ads, and sends nothing anywhere.
+          <a href="../../about.html" style="color:var(--link);font-weight:600;">Here's why it's free</a>.
+        </p>
         <div class="hero-actions">
           <a href="#features" class="btn btn-primary">Explore features</a>
           <a href="../../contact.html" class="btn btn-ghost">Get notified at launch</a>
@@ -62,10 +67,10 @@
 
         <!-- EDIT: status banner — what stage it's at, or delete this block if not needed yet -->
         <div class="status-banner">
-          <span class="icon-tile" style="background: rgba(63,216,255,0.15); color:#3fd8ff;">🚧</span>
+          <span class="icon-tile tile-ink">🚧</span>
           <p>
             <strong>Early days.</strong> This app is still being built —
-            check back here or <a href="../../contact.html" style="color: var(--accent-cyan); font-weight:600;">get in touch</a>
+            check back here or <a href="../../contact.html">get in touch</a>
             to hear when it's ready.
           </p>
         </div>
@@ -82,17 +87,17 @@
         </div>
         <div class="grid grid-3">
           <div class="card">
-            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">✨</div>
+            <div class="icon-tile tile-terracotta">✨</div>
             <h3>Feature one</h3>
             <p>One or two sentences on what it does and why it matters.</p>
           </div>
           <div class="card">
-            <div class="icon-tile" style="background: rgba(255,95,162,0.15); color:#ff8fc0;">✨</div>
+            <div class="icon-tile tile-amber">✨</div>
             <h3>Feature two</h3>
             <p>One or two sentences on what it does and why it matters.</p>
           </div>
           <div class="card">
-            <div class="icon-tile" style="background: rgba(255,159,67,0.15); color:#ffbf7f;">✨</div>
+            <div class="icon-tile tile-sage">✨</div>
             <h3>Feature three</h3>
             <p>One or two sentences on what it does and why it matters.</p>
           </div>
@@ -110,7 +115,7 @@
         </div>
         <div class="grid grid-3">
           <div class="card">
-            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">🔧</div>
+            <div class="icon-tile tile-terracotta">🔧</div>
             <h3>Detail one</h3>
             <p>Body copy.</p>
             <!-- EDIT: optional checklist — delete <ul> if not needed -->
@@ -129,22 +134,25 @@
       <div class="container">
         <div class="cta-band">
           <!-- EDIT: CTA copy -->
-          <h2>Want to try it early, or have feedback already?</h2>
-          <p>Happy to talk shop about this app, or add you to the list for launch.</p>
-          <a href="../../contact.html" class="btn btn-primary">Reach out</a>
+          <h2>Want it early, or have thoughts already?</h2>
+          <p>There's nothing to buy — the only thing I'd like back is your reaction.</p>
+          <a href="../../contact.html" class="btn btn-primary">Tell me what you thought</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
       <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
       <ul class="footer-links">
         <li><a href="../../apps.html">Apps</a></li>
         <li><a href="../../about.html">About</a></li>
         <li><a href="../../contact.html">Contact</a></li>
       </ul>
+      </div>
     </div>
   </footer>
 

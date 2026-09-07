@@ -2,6 +2,40 @@
 
 A static, no-build-step portfolio site (plain HTML/CSS/JS). Pages: Home, Apps, About, Contact.
 
+## The theme — hospitality
+
+Everything on this site is downstream of one idea, set out verbatim in the
+manifesto block on `index.html`:
+
+> We have turned creation into transaction. Every tool comes with a
+> subscription; every craft comes with a meter. But the best things in life are
+> born from a different impulse: hospitality. […] I build these apps open and
+> free because the joy of creation lies in the reaction of the guest, not the
+> size of the tip.
+
+Practically, that means:
+
+- **The visual language is a warm, sunlit kitchen table** — unbleached paper
+  (`--paper`), linen bands (`--linen`), terracotta and amber accents, a fine
+  paper grain (`--grain`) over flat colour, and Fraunces (a soft serif) for
+  display type instead of a tech-y geometric sans.
+- **The price is stated, not buried.** Every app card carries a `.price-line`
+  ("Free · No ads · Nothing collected"), and the home page has `.receipt` — a
+  bill where every line reads `0.00`, stamped *Paid in full*.
+- **Recurring marks**: the steam `.ornament` (three curls rising off something
+  warm) divides major sections; `.footer-creed` closes every page with
+  "Made to be shared, not sold."
+- **Claims stay true.** The apps are free, ad-free, and collect nothing — say
+  that freely. The source is *not* public, so never write "open source" or link
+  a code repo from a page. "Open" here means openly given, not open-source.
+- **`about.html#sous-chef`** is the honest note about AI's role in the build:
+  it preps the kitchen, the recipe and the taste are Venkatesh's.
+
+Re-theming is a token edit: every colour, font, radius and shadow lives in
+`:root` at the top of `css/style.css`, and the palette there is contrast-checked
+(body text and links clear 4.5:1 against `--paper`; the display gradient clears
+3:1 on the large headings that use it). If you change a token, keep that true.
+
 ## Structure
 
 ```
@@ -58,15 +92,17 @@ python3 -m http.server 8000
 
 Search each file for `EDIT:` comments — every placeholder is flagged. In short:
 
-1. **`apps.html` + `index.html`** — MoneyBook's real pitch/description, tech tags,
-   and links (App Store / Play Store / website). Replace or remove the two
-   placeholder app cards, or duplicate the `<article class="app-card">` block
-   to add more apps.
-2. **`about.html`** — your real bio, skills, and timeline. Swap the `V` avatar
-   div for a real `<img>` photo if you want one.
-3. **`contact.html`** — real GitHub / LinkedIn links. The support email itself
-   is deliberately not shown on the page (kept out of reach of scrapers/spam) —
-   the contact form is the intended way in; see below.
+1. **`apps.html` + `index.html`** — MoneyBook's pitch and store links go live
+   once Play approves the developer account. Duplicate the
+   `<article class="app-card">` block to add more apps, and keep the
+   `.price-line` on each one.
+2. **`about.html`** — bio, the "why I give it all away" cards, the sous-chef
+   section, and skills.
+3. **`contact.html`** — LinkedIn is the only social link on the site; the
+   GitHub link was deliberately removed so the code repos aren't discoverable
+   from the public site. Don't re-add it. The support email is also kept off
+   the page (out of reach of scrapers/spam) — the contact form is the intended
+   way in; see below.
 4. **Contact form** — POSTs straight to [Web3Forms](https://web3forms.com),
    which relays submissions server-side to whatever inbox the access key
    below is registered to in your Web3Forms dashboard — that mapping lives

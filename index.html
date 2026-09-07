@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venkatesh — Apps &amp; Projects</title>
-  <meta name="description" content="Personal portfolio of Venkatesh — indie apps and projects, including MoneyBook." />
-  <meta name="theme-color" content="#0a0a14" />
+  <title>Venkatesh — Apps, made like a meal for friends</title>
+  <meta name="description" content="I build small, useful apps and give them away — free, no ads, no subscriptions, nothing collected. Software made the way you'd cook for friends." />
+  <meta name="theme-color" content="#fbf6ec" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Venkatesh — Apps & Projects" />
-  <meta property="og:description" content="Indie apps and projects, including MoneyBook." />
+  <meta property="og:title" content="Venkatesh — Apps, made like a meal for friends" />
+  <meta property="og:description" content="Free apps, no meter running. The joy of creation lies in the reaction of the guest, not the size of the tip." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vnktsh.com/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=8" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
 </head>
 <body>
 
@@ -32,7 +32,7 @@
         <li><a href="apps.html">Apps</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+        <li><a href="contact.html" class="nav-cta">Say hello</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -46,37 +46,79 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="container hero-inner">
-        <span class="eyebrow"><span class="dot"></span> Available for interesting projects</span>
-        <h1>Hey, I'm Venkatesh —<br />I build <span class="gradient-text">apps for myself</span>, then share them.</h1>
+        <span class="eyebrow"><span class="dot"></span> The door's open — everything here is free</span>
+        <h1>Pull up a <span class="gradient-text">chair</span>.</h1>
         <p class="lead">
-          I like making apps that solve my own everyday problems — and if they help me,
-          chances are they'll help someone else too. Right now that's <strong>MoneyBook</strong>,
-          a personal finance app. This is where I'll keep collecting everything I build.
+          I'm Venkatesh, and I build apps the way I'd cook for people I like — carefully,
+          then handed over with nothing attached. No subscription, no ads, no meter running.
+          The only thing I'm hoping to get back is your reaction.
         </p>
         <div class="hero-actions">
-          <a href="apps.html" class="btn btn-primary">See my apps</a>
-          <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+          <a href="apps.html" class="btn btn-primary">See what I've made</a>
+          <a href="about.html" class="btn btn-ghost">Why I give it away</a>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEATURED APPS ================= -->
+    <!-- ================= MANIFESTO =================
+         The core of the site. Everything else on vnktsh.com is
+         downstream of this — if a section stops agreeing with it,
+         change the section, not this. -->
+    <section class="section section-alt reveal">
+      <div class="blob blob-3"></div>
+      <div class="container">
+        <svg class="ornament" viewBox="0 0 150 30" aria-hidden="true">
+          <line x1="2" y1="16" x2="52" y2="16" />
+          <line x1="98" y1="16" x2="148" y2="16" />
+          <path class="steam-rise" d="M67 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M75 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M83 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+        </svg>
+
+        <blockquote class="manifesto">
+          <p>
+            We have turned creation into transaction. Every tool comes with a
+            subscription; every craft comes with a meter.
+          </p>
+          <p>
+            But the best things in life are born from a different impulse:
+            <em>hospitality</em>.
+          </p>
+          <p>
+            Think of a home-cooked meal. You don't measure its worth by the price per
+            plate, but by the reaction of those who share it with you. Software, at its
+            finest, should feel like a feast prepared for friends.
+          </p>
+          <p>
+            I build these apps open and free because the joy of creation lies in the
+            reaction of the guest, not the size of the tip.
+          </p>
+          <footer class="manifesto-sign">— Venkatesh</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED APP ================= -->
     <section class="section reveal">
       <div class="container">
         <div class="section-head">
-          <h2>Featured work</h2>
-          <p>The app I'm currently building and getting ready to launch.</p>
+          <h2>What's on the table</h2>
+          <p>The app I'm cooking right now. More will show up here as they're ready.</p>
         </div>
 
         <div class="grid grid-1">
           <!-- MoneyBook — whole card links to its detail page -->
           <a href="apps/money-book/index.html" class="app-card">
-            <div class="app-card-media" style="background: linear-gradient(135deg,#7c5cff,#3fd8ff);">
+            <div class="app-card-media">
               <span class="badge">Coming soon</span>
               <img class="app-icon" src="assets/images/moneybook-icon.png?v=2" alt="MoneyBook app icon" />
             </div>
             <div class="app-card-body">
               <h3>MoneyBook</h3>
+              <span class="price-line">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Free · No ads · Nothing collected
+              </span>
               <p>Track spending, set budgets, and see where your money actually goes — without the spreadsheet.</p>
               <div class="app-links">
                 <span class="link-cta">Learn more →</span>
@@ -87,30 +129,135 @@
       </div>
     </section>
 
-    <!-- ================= WHY / VALUES ================= -->
+    <!-- ================= HOUSE RULES ================= -->
     <section class="section section-alt reveal">
-      <div class="blob blob-3"></div>
       <div class="container">
         <div class="section-head">
-          <h2>How I build</h2>
-          <p>A few things that show up in everything I ship.</p>
+          <h2>House rules</h2>
+          <p>Four things that are true of everything I put on this table.</p>
         </div>
-        <div class="grid grid-3">
+        <div class="grid grid-4">
+
           <div class="card">
-            <div class="icon-tile" style="background: rgba(124,92,255,0.15); color:#a78bff;">🎯</div>
-            <h3>Focused, not bloated</h3>
-            <p>Every app solves one problem well instead of trying to do everything.</p>
+            <div class="icon-tile tile-amber">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 21h6" />
+                <path d="M12 21v-9" />
+                <path d="M12 12c-1.7 0-3-1.3-3-2.9C9 6.9 12 3 12 3s3 3.9 3 6.1c0 1.6-1.3 2.9-3 2.9Z" />
+              </svg>
+            </div>
+            <h3>Nothing costs anything</h3>
+            <p>Free to download, free to keep, free later too. No subscription, no ads, no upgrade nagging at you from the corner of the screen.</p>
           </div>
+
           <div class="card">
-            <div class="icon-tile" style="background: rgba(255,95,162,0.15); color:#ff8fc0;">⚡</div>
-            <h3>Fast &amp; simple</h3>
-            <p>Clean interfaces, quick load times, no unnecessary friction.</p>
+            <div class="icon-tile tile-terracotta">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0Z" />
+                <path d="M9 8.5c0-1.6 1.6-1.6 1.6-3.2S9 2.5 9 2.5" />
+                <path d="M14.5 8.5c0-1.6 1.6-1.6 1.6-3.2s-1.6-2.8-1.6-2.8" />
+              </svg>
+            </div>
+            <h3>One dish, done properly</h3>
+            <p>Every app solves one problem well instead of ten badly. Fewer features, finished ones — nothing half-cooked shipped to fill a roadmap.</p>
           </div>
+
           <div class="card">
-            <div class="icon-tile" style="background: rgba(255,159,67,0.15); color:#ffbf7f;">🔁</div>
-            <h3>Shipped &amp; maintained</h3>
-            <p>Versioned releases and real updates — not abandoned side projects.</p>
+            <div class="icon-tile tile-sage">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="8.5" cy="8.5" r="4.5" />
+                <path d="M11.8 11.8 20 20" />
+                <path d="m15.5 15.5 2-2" />
+                <path d="m18 18 2-2" />
+              </svg>
+            </div>
+            <h3>Your data stays yours</h3>
+            <p>No accounts, no trackers, no analytics quietly taking notes. MoneyBook keeps everything on your device — there's no server to send it to.</p>
           </div>
+
+          <div class="card">
+            <div class="icon-tile tile-ink">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21h18" />
+                <path d="M15 21V3.5L6.5 6v15" />
+                <path d="M12 12.5v1.6" />
+              </svg>
+            </div>
+            <h3>The door stays open</h3>
+            <p>Real versioned updates, not an abandoned side project. If something's broken or missing, tell me — being told is half the reason I do this.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOUS-CHEF ================= -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="quiet-band">
+          <svg class="ornament" viewBox="0 0 150 30" aria-hidden="true">
+            <line x1="2" y1="16" x2="52" y2="16" />
+            <line x1="98" y1="16" x2="148" y2="16" />
+            <path class="steam-rise" d="M67 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+            <path class="steam-rise" d="M75 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+            <path class="steam-rise" d="M83 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          </svg>
+          <p>
+            AI is my sous-chef. It chops the vegetables and preps the kitchen — but the
+            recipe, the flavour, and the final dish are entirely mine.
+          </p>
+          <a href="about.html#sous-chef">How these apps actually get made →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE BILL ================= -->
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="bill-grid">
+
+          <div class="receipt">
+            <p class="receipt-title">The Bill</p>
+            <p class="receipt-sub">vnktsh.com · always open</p>
+            <ul class="receipt-lines">
+              <li><span>MoneyBook</span><span>0.00</span></li>
+              <li><span>Every update, forever</span><span>0.00</span></li>
+              <li><span>Help when it breaks</span><span>0.00</span></li>
+              <li><span>Ads shown</span><span>none</span></li>
+              <li><span>Your data</span><span>not for sale</span></li>
+            </ul>
+            <div class="receipt-total"><span>Total</span><span>0.00</span></div>
+            <p class="receipt-foot">
+              Gratuity not accepted.<br />
+              Tell me what you thought instead.
+            </p>
+            <span class="receipt-stamp">Paid in full</span>
+          </div>
+
+          <div>
+            <h2>What it costs</h2>
+            <p>
+              Nothing. Not now, not after a trial runs out, not once enough people are
+              using it. There's no business model here waiting to switch on — I'm cooking
+              for whoever shows up, and you don't hand a friend an invoice at the end of
+              dinner.
+            </p>
+            <ul class="plain-list">
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>No subscriptions.</strong> You don't rent something that was given to you.</span>
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>No ads.</strong> Nobody's attention gets sold to cover the cost of the meal.</span>
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>Nothing collected.</strong> No accounts, no telemetry, no quiet second copy of your data.</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
@@ -119,22 +266,28 @@
     <section class="section reveal">
       <div class="container">
         <div class="cta-band">
-          <h2>Have an idea, feedback, or just want to say hi?</h2>
-          <p>I'm always happy to hear from people using — or thinking about building — small useful apps.</p>
-          <a href="contact.html" class="btn btn-primary">Contact me</a>
+          <h2>So — how was it?</h2>
+          <p>
+            That's the only bill I'd like settled. If something helped, or annoyed you, or
+            should exist and doesn't yet, I'd genuinely rather hear it than not.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Tell me what you thought</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
-      <ul class="footer-links">
-        <li><a href="apps.html">Apps</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
+        <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+        <ul class="footer-links">
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 

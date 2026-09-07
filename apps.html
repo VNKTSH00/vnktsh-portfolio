@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apps — Venkatesh</title>
-  <meta name="description" content="Apps and projects built by Venkatesh, including MoneyBook." />
-  <meta name="theme-color" content="#0a0a14" />
+  <meta name="description" content="Apps built by Venkatesh and given away free — no ads, no subscriptions, nothing collected. Starting with MoneyBook." />
+  <meta name="theme-color" content="#fbf6ec" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=8" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
 </head>
 <body>
 
@@ -26,7 +26,7 @@
         <li><a href="apps.html" class="active">Apps</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="contact.html" class="nav-cta">Let's talk</a></li>
+        <li><a href="contact.html" class="nav-cta">Say hello</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -38,9 +38,13 @@
     <section class="page-hero">
       <div class="blob blob-1"></div>
       <div class="container">
-        <span class="eyebrow"><span class="dot"></span> Coming soon to Google Play</span>
-        <h1>Things I'm <span class="gradient-text">building</span></h1>
-        <p>Every app here is something I made to solve a problem of my own first. Right now there's one — more will show up as they're ready.</p>
+        <span class="eyebrow"><span class="dot"></span> Free, and staying that way</span>
+        <h1>What's on the <span class="gradient-text">table</span></h1>
+        <p>
+          Every app here started as something I made for myself, then set out for anyone
+          else who wanted some. Nothing costs anything. Right now there's one dish —
+          more will appear as they're actually finished.
+        </p>
       </div>
     </section>
 
@@ -50,12 +54,16 @@
 
           <!-- ===== MoneyBook ===== -->
           <article class="app-card">
-            <div class="app-card-media" style="background: linear-gradient(135deg,#7c5cff,#3fd8ff);">
+            <div class="app-card-media">
               <span class="badge">Coming soon</span>
               <img class="app-icon" src="assets/images/moneybook-icon.png?v=2" alt="MoneyBook app icon" />
             </div>
             <div class="app-card-body">
               <h3>MoneyBook</h3>
+              <span class="price-line">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Free · No ads · Nothing collected
+              </span>
               <p>
                 A personal finance tracker for logging expenses, setting budgets, and
                 understanding where your money goes — without wrestling a spreadsheet.
@@ -63,9 +71,10 @@
               <div class="tag-row">
                 <span class="tag">Finance</span>
                 <span class="tag">Mobile</span>
+                <span class="tag">Works offline</span>
               </div>
               <p class="form-note" style="margin-top:4px;">
-                Getting ready to launch — my Google Play developer account is currently under
+                Almost out of the oven — my Google Play developer account is currently under
                 verification. Store links will go live here as soon as it's approved.
               </p>
               <div class="app-links">
@@ -80,23 +89,50 @@
 
     <section class="section section-alt reveal">
       <div class="container">
+        <svg class="ornament" viewBox="0 0 150 30" aria-hidden="true">
+          <line x1="2" y1="16" x2="52" y2="16" />
+          <line x1="98" y1="16" x2="148" y2="16" />
+          <path class="steam-rise" d="M67 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M75 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M83 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+        </svg>
+        <div class="section-head" style="margin-bottom:0;">
+          <h2>Why there's no price on any of this</h2>
+          <p>
+            Because a meal you cook for friends doesn't come with a bill, and I don't think
+            software has to either. I'd rather a hundred people actually use something I
+            made than ten people pay for it.
+          </p>
+          <a href="about.html" class="btn btn-ghost" style="margin-top:12px;">Read the whole idea</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
         <div class="cta-band">
-          <h2>Building something? Let's compare notes.</h2>
-          <p>Happy to talk shop about indie app development, design, or MoneyBook specifically.</p>
-          <a href="contact.html" class="btn btn-primary">Reach out</a>
+          <h2>Hungry for something that doesn't exist yet?</h2>
+          <p>
+            If you're solving a problem with a spreadsheet and ten open tabs, tell me about
+            it. That's exactly how MoneyBook started.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Send me the idea</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
-      <ul class="footer-links">
-        <li><a href="apps.html">Apps</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
+        <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+        <ul class="footer-links">
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 

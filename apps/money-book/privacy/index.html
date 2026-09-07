@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MoneyBook Privacy Policy — Venkatesh</title>
   <meta name="description" content="MoneyBook collects no data. Nothing is ever sent anywhere — install it and use it." />
-  <meta name="theme-color" content="#0a0a14" />
+  <meta name="theme-color" content="#fbf6ec" />
   <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../../../css/style.css?v=8" />
+  <link rel="stylesheet" href="../../../css/style.css?v=9" />
 
   <style>
     /* Page-scoped additions for the legal content — reuses the site's
-       tokens (--card, --card-border, --muted, --gradient) rather than
+       tokens (--card, --card-border, --ink-soft, --gradient) rather than
        introducing a new palette. */
     .legal {
       max-width: 720px;
@@ -24,7 +24,7 @@
     }
     .legal .updated {
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--ink-soft);
       margin-bottom: 40px;
     }
     .legal-entry {
@@ -39,7 +39,7 @@
       gap: 10px;
     }
     .legal-entry h2 .num {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 0.8rem;
       color: transparent;
       background: var(--gradient);
@@ -49,8 +49,8 @@
     }
     .legal-entry p { margin-bottom: 12px; }
     .legal-entry p:last-child { margin-bottom: 0; }
-    .legal-entry strong { color: var(--text); }
-    .legal-entry a { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-entry strong { color: var(--ink); }
+    .legal-entry a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -65,7 +65,7 @@
         <li><a href="../../../apps.html" class="active">Apps</a></li>
         <li><a href="../../../about.html">About</a></li>
         <li><a href="../../../contact.html">Contact</a></li>
-        <li><a href="../../../contact.html" class="nav-cta">Let's talk</a></li>
+        <li><a href="../../../contact.html" class="nav-cta">Say hello</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -121,13 +121,16 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
       <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
       <ul class="footer-links">
         <li><a href="../../../apps.html">Apps</a></li>
         <li><a href="../../../about.html">About</a></li>
         <li><a href="../../../contact.html">Contact</a></li>
       </ul>
+      </div>
     </div>
   </footer>
 
