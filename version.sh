@@ -83,9 +83,11 @@ record() {
 }
 
 confirm() {
-  local answer
+  local answer=""
+  [ "${ASSUME_YES:-0}" = "1" ] && return 0
   printf '%s [y/N] ' "$1"
-  read -r answer </dev/tty || answer=""
+  if [ -r /dev/tty ]; then read -r answer </dev/tty || answer=""
+  else read -r answer || answer=""; fi
   case "$answer" in y|Y|yes|YES) return 0 ;; *) return 1 ;; esac
 }
 
@@ -180,7 +182,15 @@ cmd_preview() {
 }
 
 cmd_restore() {
-  local v; v="$(normalise "${1-}")"
+  local v=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -y|--yes) ASSUME_YES=1 ;;
+      *) v="$1" ;;
+    esac
+    shift
+  done
+  v="$(normalise "$v")"
   version_exists "$v" || die "no such version: $v  (try ./version.sh list)"
   tree_is_clean || die "you have uncommitted changes — commit or stash them first"
 
@@ -230,6 +240,7 @@ usage() {
     ./version.sh preview <version>       run an old version locally, safely
     ./version.sh diff <version>          what's changed since that version
     ./version.sh restore <version>       put that version back on the site
+                          add -y to skip the confirmation prompt
 
   Restoring is always safe: the current state stays tagged in history, so
   you can restore forward again at any time.

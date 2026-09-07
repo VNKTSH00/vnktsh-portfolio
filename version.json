@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
-  "released": "2026-09-07T20:02:03Z",
-  "note": "Background artwork — a pulli kolam behind every hero, plus leafy vines, a palm frond, kitchen doodles and a code block as faint bottom-layer texture. Adds the ./version.sh snapshot and restore tooling."
+  "version": "1.1.1",
+  "released": "2026-09-07T20:02:57Z",
+  "note": "version.sh: allow non-interactive restore with -y, and fall back to stdin when there is no controlling terminal."
 }
