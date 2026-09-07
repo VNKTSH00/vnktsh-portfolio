@@ -32,6 +32,12 @@ git rev-parse --git-dir >/dev/null 2>&1 || die "not a git repository"
 
 TAG_GLOB='v[0-9]*.[0-9]*.[0-9]*'
 
+# Restoring rolls the *site* back, not the tooling. If these came along for
+# the ride you could restore a version that predates a fix to this script and
+# lose the ability to restore forward again — and VERSIONS.md would forget
+# that the newer versions ever existed.
+KEEP_ON_RESTORE='version.sh VERSIONS.md tools'
+
 latest_version() { git tag --list "$TAG_GLOB" --sort=-v:refname | head -n1; }
 
 version_exists() { git rev-parse -q --verify "refs/tags/$1" >/dev/null 2>&1; }
@@ -209,7 +215,16 @@ cmd_restore() {
   # Makes the index and working tree exactly match the tag, deleting files
   # added since. HEAD stays put, so committing records this as a normal
   # step forward rather than a rewrite.
+  local prev; prev="$(git rev-parse HEAD)"
   git read-tree -u --reset "$v^{tree}"
+
+  # ...then bring the tooling and the changelog back to their current state.
+  local keep
+  for keep in $KEEP_ON_RESTORE; do
+    if git rev-parse -q --verify "$prev:$keep" >/dev/null 2>&1; then
+      git checkout "$prev" -- "$keep"
+    fi
+  done
 
   stamp_version_file "$v" "Restored from $v" "$v"
   record "Restored to $v — $(date '+%-d %B %Y')" \
@@ -243,7 +258,8 @@ usage() {
                           add -y to skip the confirmation prompt
 
   Restoring is always safe: the current state stays tagged in history, so
-  you can restore forward again at any time.
+  you can restore forward again at any time. version.sh, VERSIONS.md and
+  tools/ never roll back with a restore — only the site does.
 
 USAGE
 }

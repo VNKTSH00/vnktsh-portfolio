@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
-  "released": "2026-09-07T20:02:57Z",
-  "note": "version.sh: allow non-interactive restore with -y, and fall back to stdin when there is no controlling terminal."
+  "version": "1.1.2",
+  "released": "2026-09-07T20:03:57Z",
+  "note": "restore: keep version.sh, VERSIONS.md and tools/ at their current state instead of rolling them back with the site, so restoring an old version can never strand the tooling."
 }

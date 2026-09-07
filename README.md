@@ -73,6 +73,12 @@ you're on v4.2.0 and restore v1.0.0, v4.2.0 is still tagged and
 `./version.sh restore v4.2.0` puts it straight back. Nothing is ever lost, and
 the deployed site just follows `main` as usual.
 
+Three things deliberately do **not** roll back with a restore: `version.sh`,
+`VERSIONS.md` and `tools/`. Otherwise restoring an old version would also
+restore an old copy of this tooling — and you could land on a version that
+predates a fix and be unable to restore forward again. The site rolls back;
+the machinery that rolls it back stays current.
+
 The deployed site carries `version.json` at its root, so
 <https://vnktsh.com/version.json> tells you what's actually live.
 
