@@ -68,11 +68,12 @@ Search each file for `EDIT:` comments — every placeholder is flagged. In short
    is deliberately not shown on the page (kept out of reach of scrapers/spam) —
    the contact form is the intended way in; see below.
 4. **Contact form** — POSTs straight to [Web3Forms](https://web3forms.com),
-   which relays submissions server-side to `support.vnktsh@proton.me` (that
-   destination lives in the Web3Forms account tied to the access key below,
-   not in this repo — change it there if it ever needs to move). No mailto:
-   involved, so it works for any visitor regardless of whether they have a
-   local email client configured. The access key lives in a hidden
+   which relays submissions server-side to whatever inbox the access key
+   below is registered to in your Web3Forms dashboard — that mapping lives
+   in your Web3Forms account, not this repo, so change it there if the
+   destination ever needs to move. No mailto: involved, so it works for any
+   visitor regardless of whether they have a local email client configured.
+   The access key lives in a hidden
    `access_key` input in the `<form id="contact-form">` in `contact.html`
    (Web3Forms access keys are meant to be public/client-side, so this is
    safe to commit). To rotate the key or point it at a different inbox,
