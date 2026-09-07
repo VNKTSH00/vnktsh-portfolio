@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
-  "released": "2026-09-07T19:52:46Z",
-  "note": "The hospitality theme — warm kitchen-table design, the manifesto, the 0.00 bill, and the sous-chef note. The site as it stood before any background artwork."
+  "version": "1.1.0",
+  "released": "2026-09-07T20:02:03Z",
+  "note": "Background artwork — a pulli kolam behind every hero, plus leafy vines, a palm frond, kitchen doodles and a code block as faint bottom-layer texture. Adds the ./version.sh snapshot and restore tooling."
 }

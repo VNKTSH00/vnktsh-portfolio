@@ -25,6 +25,17 @@ Practically, that means:
 - **Recurring marks**: the steam `.ornament` (three curls rising off something
   warm) divides major sections; `.footer-creed` closes every page with
   "Made to be shared, not sold."
+- **Background motifs** sit at the very bottom of the stack, at 5-8% opacity.
+  They are line art drawn for this site (nothing traced), carried as SVG data
+  URIs in `:root` so they cost no extra requests. The important one is
+  `--motif-kolam`: a *pulli kolam*, the looped lattice drawn in rice flour
+  across the threshold of a Tamil home to welcome whoever arrives — the
+  hospitality idea as a drawing, so it sits behind every hero. The others are
+  texture: `--motif-vines` tiles across the whole site as the bottom layer,
+  and `--motif-frond` / `--motif-utensils` / `--motif-code` are opted into per
+  section with `.has-frond`, `.has-utensils`, `.has-code`. To regenerate or
+  retune them, the generator is `tools/gen_motifs.py`. Keep them faint: past
+  ~8% they start competing with the words.
 - **Claims stay true.** The apps are free, ad-free, and collect nothing — say
   that freely. The source is *not* public, so never write "open source" or link
   a code repo from a page. "Open" here means openly given, not open-source.
@@ -35,6 +46,35 @@ Re-theming is a token edit: every colour, font, radius and shadow lives in
 `:root` at the top of `css/style.css`, and the palette there is contrast-checked
 (body text and links clear 4.5:1 against `--paper`; the display gradient clears
 3:1 on the large headings that use it). If you change a token, keep that true.
+
+## Versions — snapshotting and rolling back
+
+Every release of the site is a git tag plus an entry in `VERSIONS.md`, driven
+by `./version.sh`. Any past state can be brought back exactly.
+
+```bash
+./version.sh current                  # what's released, what's pending
+./version.sh list                     # every version, newest first
+./version.sh release minor "note"     # cut a version and push it
+./version.sh preview v1.0.0           # run an old version locally first
+./version.sh diff v1.0.0              # what's changed since then
+./version.sh restore v1.0.0           # put that version back on the site
+```
+
+`release` takes `major`, `minor` or `patch`:
+
+- **patch** — copy fix, colour tweak, a bug
+- **minor** — a new section, a new app page, a visual change people will notice
+- **major** — the site's argument or structure changes
+
+**Restoring is safe and reversible.** `restore` doesn't rewrite history — it
+lays the old files down as a *new* commit on top of the current one. So if
+you're on v4.2.0 and restore v1.0.0, v4.2.0 is still tagged and
+`./version.sh restore v4.2.0` puts it straight back. Nothing is ever lost, and
+the deployed site just follows `main` as usual.
+
+The deployed site carries `version.json` at its root, so
+<https://vnktsh.com/version.json> tells you what's actually live.
 
 ## Structure
 
