@@ -64,11 +64,13 @@ Search each file for `EDIT:` comments — every placeholder is flagged. In short
    to add more apps.
 2. **`about.html`** — your real bio, skills, and timeline. Swap the `V` avatar
    div for a real `<img>` photo if you want one.
-3. **`contact.html`** — real GitHub / LinkedIn links, plus a direct
-   `mailto:support.vnktsh@proton.me` entry — that inbox is the official contact
-   channel for the whole site.
+3. **`contact.html`** — real GitHub / LinkedIn links. The support email itself
+   is deliberately not shown on the page (kept out of reach of scrapers/spam) —
+   the contact form is the intended way in; see below.
 4. **Contact form** — POSTs straight to [Web3Forms](https://web3forms.com),
-   which relays submissions server-side to `support.vnktsh@proton.me`. No mailto:
+   which relays submissions server-side to `support.vnktsh@proton.me` (that
+   destination lives in the Web3Forms account tied to the access key below,
+   not in this repo — change it there if it ever needs to move). No mailto:
    involved, so it works for any visitor regardless of whether they have a
    local email client configured. The access key lives in a hidden
    `access_key` input in the `<form id="contact-form">` in `contact.html`
