@@ -46,9 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Contact form — POSTs to Web3Forms, which relays it to support.vnktsh@proton.me
-     server-side. No mailto: involved, so it works for any visitor regardless
-     of whether they have a local email client configured. */
+  /* Contact form — POSTs to Web3Forms, which relays it server-side to
+     whichever inbox the access key is mapped to in the Web3Forms dashboard.
+     The address is deliberately not named here: this file is served publicly,
+     and keeping it out of the site's source is the same reason it isn't
+     printed on the Contact page. No mailto: involved, so it works for any
+     visitor regardless of whether they have a local email client. */
   const form = document.querySelector('#contact-form');
   const status = document.querySelector('.form-status');
   if (form && status) {

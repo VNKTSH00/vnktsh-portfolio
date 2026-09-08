@@ -1,5 +1,5 @@
 {
-  "version": "1.1.2",
-  "released": "2026-09-07T20:03:57Z",
-  "note": "restore: keep version.sh, VERSIONS.md and tools/ at their current state instead of rolling them back with the site, so restoring an old version can never strand the tooling."
+  "version": "1.1.3",
+  "released": "2026-09-08T10:09:58Z",
+  "note": "MoneyBook privacy policy: point 'Contact us' at the contact page instead of printing a support email, and take the address out of the public JS comment too."
 }
