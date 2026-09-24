@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../../css/style.css?v=10" />
+  <link rel="stylesheet" href="../../css/style.css?v=12" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
       <div class="blob blob-1"></div>
       <div class="container">
         <a href="../../apps.html" class="back-link">← Back to Apps</a>
-        <span class="eyebrow"><span class="dot"></span> Free · Coming soon to Google Play</span>
+        <span class="eyebrow"><span class="dot"></span> Free · Ready to install · v1.4.1</span>
         <h1>Budgeting that doesn't <span class="gradient-text">feel like homework</span>.</h1>
         <p>
           MoneyBook is a personal finance app for logging expenses, setting budgets, and
@@ -50,8 +50,227 @@
           I've put on the table here — <a href="../../about.html" style="color:var(--link);font-weight:600;">here's why it's free</a>.
         </p>
         <div class="hero-actions">
-          <a href="#features" class="btn btn-primary">See what it does</a>
-          <a href="../../contact.html" class="btn btn-ghost">Get notified at launch</a>
+          <a href="../../downloads/MoneyBook-1.4.1.apk" class="btn btn-primary" download>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+              <path d="M12 3v11" />
+              <path d="M8 10l4 4 4-4" />
+            </svg>
+            Download for Android
+          </a>
+          <a href="../../downloads/MoneyBook-1.4.1.dmg" class="btn btn-ghost" download>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+              <path d="M12 3v11" />
+              <path d="M8 10l4 4 4-4" />
+            </svg>
+            Download for macOS
+          </a>
+        </div>
+        <div class="status-banner">
+          <div class="icon-tile tile-amber">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 8h.01" />
+              <path d="M11 12h1v4h1" />
+            </svg>
+          </div>
+          <p>
+            <strong>Early access.</strong> The Google Play listing is still in review, so for now
+            MoneyBook installs straight from this page — same finished app, just handed to you
+            directly. <a href="#download">How to install it, and why it's safe →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DOWNLOAD ================= -->
+    <section class="section reveal" id="download">
+      <div class="container">
+        <div class="section-head">
+          <h2>Take a copy</h2>
+          <p>
+            One file, one install, nothing to sign up for. Pick your platform — the steps
+            below are what you'll actually see, warnings and all.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+
+          <!-- ---------- Android ---------- -->
+          <div class="dl-card">
+            <div class="icon-tile tile-sage">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="2" width="12" height="20" rx="2.5" />
+                <path d="M10.5 18.5h3" />
+              </svg>
+            </div>
+            <h3>Android</h3>
+            <p class="dl-meta">Version 1.4.1 · 68 MB · Android 7.0 or newer</p>
+
+            <a href="../../downloads/MoneyBook-1.4.1.apk" class="btn btn-primary btn-block" download>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+                <path d="M12 3v11" />
+                <path d="M8 10l4 4 4-4" />
+              </svg>
+              Download now
+            </a>
+            <span class="btn btn-disabled btn-block" aria-disabled="true">
+              On Google Play — coming soon
+            </span>
+
+            <ol class="dl-steps">
+              <li>Tap <strong>Download now</strong>, then open the file when it finishes.</li>
+              <li>Android will ask whether to <strong>allow installs from your browser</strong>. That
+                prompt appears for every app that didn't come from the Play Store — say yes once.</li>
+              <li>Play Protect may offer to <strong>scan the app</strong>, or warn that the developer
+                isn't recognised. Both are about the app being new to Google, not about anything
+                found in it. Choose <strong>Install anyway</strong> or <strong>More details → Install</strong>.</li>
+              <li>That's it. When the Play Store listing goes live, updating through it will
+                carry your data across — it's the same signed app.</li>
+            </ol>
+
+            <div class="dl-foot">
+              <p class="dl-meta" style="margin:0;">SHA-256 — check your download matches:</p>
+              <p class="hash">db852f1a931538f553f5432cff68d63d5383d6e07d76a81d65acaf9075d82bc1</p>
+            </div>
+          </div>
+
+          <!-- ---------- macOS ---------- -->
+          <div class="dl-card">
+            <div class="icon-tile tile-ink">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2.5" y="4" width="19" height="12" rx="2" />
+                <path d="M2 20h20" />
+              </svg>
+            </div>
+            <h3>macOS</h3>
+            <p class="dl-meta">Version 1.4.1 · 29 MB · macOS 12 or newer · Apple silicon &amp; Intel</p>
+
+            <a href="../../downloads/MoneyBook-1.4.1.dmg" class="btn btn-primary btn-block" download>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+                <path d="M12 3v11" />
+                <path d="M8 10l4 4 4-4" />
+              </svg>
+              Download now
+            </a>
+            <span class="btn btn-disabled btn-block" aria-disabled="true">
+              On the Mac App Store — not planned yet
+            </span>
+
+            <ol class="dl-steps">
+              <li>Open the downloaded <strong>.dmg</strong> and drag <strong>Money Book</strong> into
+                your Applications folder.</li>
+              <li>The first launch will say the app <strong>can't be opened because Apple cannot
+                check it</strong>. Apple's check costs $99 a year to run, and this app is free —
+                so it isn't signed up for it.</li>
+              <li>To open it anyway: go to <strong>System Settings → Privacy &amp; Security</strong>,
+                scroll to the message about Money Book, and click <strong>Open Anyway</strong>.</li>
+              <li>macOS asks once. After that it opens like any other app.</li>
+            </ol>
+
+            <div class="dl-foot">
+              <p class="dl-meta" style="margin:0;">SHA-256 — check your download matches:</p>
+              <p class="hash">c44a6d02f5dcb5a1a1a3d908ff89167704d90f90c6c86842156f99a793d5b331</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY IT'S SAFE ================= -->
+    <section class="section section-alt reveal" id="safety">
+      <div class="container">
+        <div class="section-head">
+          <h2>Installing this outside a store is safe. Here's the proof.</h2>
+          <p>
+            "Unknown developer" warnings are about paperwork, not about the app. These three
+            things are checkable by you, right now, without taking my word for any of it.
+          </p>
+        </div>
+        <div class="grid grid-3">
+
+          <div class="card">
+            <div class="icon-tile tile-sage">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a9 9 0 1 0 9 9" />
+                <path d="M4 4l16 16" />
+                <path d="M15 4h6v6" />
+              </svg>
+            </div>
+            <h3>It can't reach the internet</h3>
+            <p>
+              MoneyBook doesn't request internet access at all. Android enforces that at the
+              system level, so there is no version of this app that can quietly upload anything —
+              not your transactions, not your receipts, not an analytics ping.
+            </p>
+            <ul class="check-list">
+              <li>No accounts, no login, no server</li>
+              <li>No analytics, crash reporting or ad SDKs</li>
+              <li>Your ledger lives in the app's private storage</li>
+              <li>Camera is only for receipt photos, which stay put</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-tile tile-amber">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3>You can verify the file</h3>
+            <p>
+              Every download's SHA-256 fingerprint is published above. If the number your
+              computer calculates matches, the file is byte-for-byte the one I built — nothing
+              was swapped or injected on the way to you.
+            </p>
+            <ul class="check-list">
+              <li>Checksums for both platforms</li>
+              <li>Signing certificate fingerprint published</li>
+              <li><a href="../../downloads/checksums.txt">See all fingerprints →</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-tile tile-terracotta">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+            </div>
+            <h3>Updates can only come from me</h3>
+            <p>
+              The Android build is signed with a release key only I hold. Android refuses any
+              update signed by a different key, so a copy of MoneyBook picked up elsewhere can
+              never replace the one you installed from here.
+            </p>
+            <ul class="check-list">
+              <li>Properly release-signed, not a test build</li>
+              <li>Same key for every future version</li>
+              <li>Optional biometric lock on the app itself</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="status-banner" style="max-width:760px;">
+          <div class="icon-tile tile-ink">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Z" />
+              <path d="M12 8v5" />
+              <path d="M12 16h.01" />
+            </svg>
+          </div>
+          <p>
+            Only ever install MoneyBook from <strong>vnktsh.com</strong>. If you find this app on a
+            mirror or an APK site, I didn't put it there and I can't vouch for what's in it.
+            Questions about any of this? <a href="../../contact.html">Ask me directly</a> — or read
+            the <a href="privacy/index.html">privacy policy</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -318,12 +537,15 @@
     <section class="section section-alt reveal">
       <div class="container">
         <div class="cta-band">
-          <h2>Want it early, or have thoughts already?</h2>
+          <h2>It's yours. Tell me how it goes.</h2>
           <p>
             There's nothing to buy — the only thing I'd like back is your reaction. Tell me
-            what's missing and I'll probably build it.
+            what's missing, or what broke, and I'll probably fix it.
           </p>
-          <a href="../../contact.html" class="btn btn-primary">Tell me what you thought</a>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Download MoneyBook</a>
+            <a href="../../contact.html" class="btn btn-ghost">Tell me what you thought</a>
+          </div>
         </div>
       </div>
     </section>

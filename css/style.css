@@ -1295,3 +1295,109 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
   color: var(--link);
 }
 .quiet-band a:hover { color: var(--amber-deep); }
+
+/* ---------- Download cards ----------
+   Used on the MoneyBook page. Each card is one platform: what you get, the
+   button that gets it, and the honest caveat underneath. The caveat is part
+   of the card rather than a footnote because an installer warning you weren't
+   told about is the thing that makes people abandon a download. */
+.dl-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.dl-card h3 { font-size: 1.3rem; margin-bottom: 4px; }
+
+/* Version · size · requirement, in that order. Small, but people look for it. */
+.dl-meta {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+/* Buttons in a card go full width — there's only one thing to do here. */
+.btn-block {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Play Store, not yet. Deliberately inert: no href, no hover lift, and
+   aria-disabled so a screen reader doesn't announce it as available. */
+.btn-disabled {
+  background: rgba(42, 31, 22, 0.06);
+  color: var(--ink-soft);
+  border: 1px dashed var(--card-border-strong);
+  cursor: default;
+}
+.btn-disabled:hover { transform: none; }
+
+/* The "what will happen when you install this" steps. */
+.dl-steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* The number is positioned out of flow rather than made a flex item: these
+   steps contain <strong> runs mid-sentence, and a flex li would promote each
+   one to its own column and break the prose into ragged stacks. */
+.dl-steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 30px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.dl-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(194, 96, 58, 0.14);
+  color: var(--terracotta-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dl-steps strong { color: var(--ink); font-weight: 600; }
+
+/* Pushes the caveat block to the bottom edge so cards of unequal length
+   still line their rules up. */
+.dl-foot {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* Checksums and fingerprints: long, monospaced, and must never widen the page. */
+.hash {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  background: rgba(42, 31, 22, 0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+  .dl-card { padding: 22px; }
+}

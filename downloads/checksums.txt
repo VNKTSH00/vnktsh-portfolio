@@ -1,0 +1,25 @@
+MoneyBook 1.4.1 — file fingerprints
+===================================
+
+Verify a download matches what was published here before you install it.
+If a number below doesn't match your copy, the file was altered in transit —
+delete it and download again.
+
+  macOS / Linux:  shasum -a 256 MoneyBook-1.4.1.apk
+  Windows:        certutil -hashfile MoneyBook-1.4.1.apk SHA256
+
+SHA-256
+-------
+db852f1a931538f553f5432cff68d63d5383d6e07d76a81d65acaf9075d82bc1  MoneyBook-1.4.1.apk
+c44a6d02f5dcb5a1a1a3d908ff89167704d90f90c6c86842156f99a793d5b331  MoneyBook-1.4.1.dmg
+
+Android signing certificate
+---------------------------
+Every MoneyBook APK is signed with the same key. Android checks this itself and
+will refuse an update signed by anyone else, so this fingerprint is also how you
+know a future version really came from here.
+
+  SHA-256  cf:a7:f9:38:88:21:66:d9:a1:89:b2:10:33:9b:21:fc:22:15:b2:ef:48:53:a2:b1:08:8a:40:c6:c1:cd:62:2c
+  SHA-1    9a:d5:aa:a7:4f:9e:99:92:23:d9:af:da:ec:26:2f:8d:17:e9:44:a2
+
+  Check yours with:  apksigner verify --print-certs MoneyBook-1.4.1.apk

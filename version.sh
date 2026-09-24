@@ -36,7 +36,7 @@ TAG_GLOB='v[0-9]*.[0-9]*.[0-9]*'
 # the ride you could restore a version that predates a fix to this script and
 # lose the ability to restore forward again — and VERSIONS.md would forget
 # that the newer versions ever existed.
-KEEP_ON_RESTORE='version.sh VERSIONS.md tools'
+KEEP_ON_RESTORE='version.sh VERSIONS.md tools downloads'
 
 latest_version() { git tag --list "$TAG_GLOB" --sort=-v:refname | head -n1; }
 

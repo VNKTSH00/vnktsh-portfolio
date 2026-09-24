@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.2.0 — 24 September 2026
+
+MoneyBook ships: direct Android APK and macOS DMG downloads served from vnktsh.com, with install steps, SHA-256 checksums and a section explaining why sideloading this is safe. Play Store listing marked coming soon rather than blocking the release.
+
 ## v1.1.3 — 8 September 2026
 
 MoneyBook privacy policy: point 'Contact us' at the contact page instead of printing a support email, and take the address out of the public JS comment too.
