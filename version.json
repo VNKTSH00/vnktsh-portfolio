@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
-  "released": "2026-09-24T15:34:20Z",
-  "note": "MoneyBook 1.4.2: the app now credits its developer in Settings > About with a link to vnktsh.com, and the macOS bundle carries the same attribution. Download links, sizes and SHA-256 fingerprints updated; the Android signing key is unchanged so 1.4.2 installs over 1.4.1."
+  "version": "1.2.2",
+  "released": "2026-09-24T16:03:28Z",
+  "note": "MoneyBook 1.4.3: Settings > About now shows 'Made by Venkatesh / www.vnktsh.com' as plain text rather than a link, and the app no longer ships any link-opening code. Downloads, sizes and SHA-256 fingerprints updated."
 }

@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.2.2 — 24 September 2026
+
+MoneyBook 1.4.3: Settings > About now shows 'Made by Venkatesh / www.vnktsh.com' as plain text rather than a link, and the app no longer ships any link-opening code. Downloads, sizes and SHA-256 fingerprints updated.
+
 ## v1.2.1 — 24 September 2026
 
 MoneyBook 1.4.2: the app now credits its developer in Settings > About with a link to vnktsh.com, and the macOS bundle carries the same attribution. Download links, sizes and SHA-256 fingerprints updated; the Android signing key is unchanged so 1.4.2 installs over 1.4.1.
