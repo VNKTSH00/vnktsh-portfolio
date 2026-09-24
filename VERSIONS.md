@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.2.1 — 24 September 2026
+
+MoneyBook 1.4.2: the app now credits its developer in Settings > About with a link to vnktsh.com, and the macOS bundle carries the same attribution. Download links, sizes and SHA-256 fingerprints updated; the Android signing key is unchanged so 1.4.2 installs over 1.4.1.
+
 ## v1.2.0 — 24 September 2026
 
 MoneyBook ships: direct Android APK and macOS DMG downloads served from vnktsh.com, with install steps, SHA-256 checksums and a section explaining why sideloading this is safe. Play Store listing marked coming soon rather than blocking the release.
