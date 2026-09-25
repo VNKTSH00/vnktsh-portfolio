@@ -1417,7 +1417,7 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: clamp(220px, 62vw, 270px);
-  gap: 32px;
+  gap: 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 24px;
@@ -1433,27 +1433,19 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
 .gallery-slide { scroll-snap-align: start; }
 .gallery-slide figure { margin: 0; }
 
-/* The phone: a dark bezel so the app's cool greys sit on the warm
-   page as an object on the table, not a patch of a different site. */
-.shot {
-  border: 7px solid var(--ink);
-  border-radius: 34px;
-  overflow: hidden;
-  background: var(--ink);
-  box-shadow: 0 10px 22px rgba(74, 48, 26, 0.16);
-  aspect-ratio: 600 / 1226;
-  transition: transform 0.25s ease;
-}
-.gallery-slide:hover .shot { transform: translateY(-4px); }
+/* No bezel: the screens sit flush, edge to edge, so the shelf reads
+   as one long continuous screen you slide along rather than a row of
+   separate phones. */
+.shot { aspect-ratio: 600 / 1226; }
 .shot img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 27px;
 }
 .gallery-slide figcaption {
   margin-top: 20px;
+  padding-right: 28px;
   font-size: 0.92rem;
   line-height: 1.55;
   color: var(--ink-soft);
@@ -1507,6 +1499,3 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
   color: var(--ink-soft);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .shot, .gallery-slide:hover .shot { transition: none; transform: none; }
-}

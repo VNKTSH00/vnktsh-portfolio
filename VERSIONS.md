@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.3.1 — 25 September 2026
+
+MoneyBook gallery: dropped the phone bezel and rounded corners; the screenshots now sit flush, edge to edge, as one continuous screen.
+
 ## v1.3.0 — 25 September 2026
 
 MoneyBook page: new 'Have a look around' gallery, a swipeable shelf of ten app screenshots (entries, add entry, category and account pickers, stats, budget, new budget, categories, appearance, settings) with arrow buttons and a counter. Stylesheet cache bumped to v13.

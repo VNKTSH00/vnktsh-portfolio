@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
-  "released": "2026-09-25T06:44:18Z",
-  "note": "MoneyBook page: new 'Have a look around' gallery, a swipeable shelf of ten app screenshots (entries, add entry, category and account pickers, stats, budget, new budget, categories, appearance, settings) with arrow buttons and a counter. Stylesheet cache bumped to v13."
+  "version": "1.3.1",
+  "released": "2026-09-25T06:48:02Z",
+  "note": "MoneyBook gallery: dropped the phone bezel and rounded corners; the screenshots now sit flush, edge to edge, as one continuous screen."
 }
