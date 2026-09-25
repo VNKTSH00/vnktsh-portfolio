@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.3.3 — 25 September 2026
+
+MoneyBook gallery: added an 'On a Mac?' note under the screenshots inviting visitors to download the macOS build and look around themselves.
+
 ## v1.3.2 — 25 September 2026
 
 MoneyBook gallery: screenshots keep rounded corners with no border, spaced apart again. Stylesheet cache bumped to v14 so Cloudflare stops serving the old bezel styles.
