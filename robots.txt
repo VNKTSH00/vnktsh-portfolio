@@ -1,0 +1,5 @@
+# vnktsh.com — everyone's welcome at this table.
+User-agent: *
+Allow: /
+
+Sitemap: https://vnktsh.com/sitemap.xml

@@ -124,6 +124,17 @@ Then open `apps/<app-slug>/index.html` and fill in every block marked
 nav/footer/hero/card/CTA styling as the rest of the site — no new CSS
 needed unless the app genuinely needs a new layout.
 
+For search engines and link previews, also:
+
+- add the page's `<url>` to `sitemap.xml`;
+- fill in the canonical/Open Graph tags and the `SoftwareApplication`
+  JSON-LD in the page `<head>` (MoneyBook's page is the worked example);
+- optionally add a share card for it in `tools/og/card.html` and run
+  `tools/og/render.sh` to produce `assets/images/og/og-<app>.jpg`.
+
+When an app's version changes, update `softwareVersion` and `downloadUrl` in
+its JSON-LD along with the visible download links.
+
 No build tools, no framework, no dependencies — just open `index.html` in a browser,
 or run a tiny local server so relative paths behave exactly like they will in
 production:

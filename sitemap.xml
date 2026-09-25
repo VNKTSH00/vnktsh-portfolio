@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Add each new app page here (see "Adding a new app" in README.md) and bump
+     <lastmod> on pages whose content changes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vnktsh.com/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://vnktsh.com/apps/money-book/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://vnktsh.com/apps.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://vnktsh.com/about.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://vnktsh.com/contact.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://vnktsh.com/apps/money-book/privacy/</loc><lastmod>2026-09-25</lastmod></url>
+</urlset>

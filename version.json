@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
-  "released": "2026-09-25T07:16:56Z",
-  "note": "MoneyBook page: added 'Why I built this' founder note above the closing call to action."
+  "version": "1.4.2",
+  "released": "2026-09-25T07:27:59Z",
+  "note": "SEO: robots.txt, sitemap.xml, canonical URLs, Open Graph/Twitter share cards, JSON-LD (WebSite, Person, SoftwareApplication), keyword-bearing MoneyBook title, noindex on 404."
 }

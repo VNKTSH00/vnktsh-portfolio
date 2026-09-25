@@ -14,6 +14,21 @@
   <!-- EDIT: one-sentence description -->
   <meta name="description" content="APP NAME is a ... for ..." />
   <meta name="theme-color" content="#fbf6ec" />
+  <!-- EDIT: canonical + social previews — replace app-slug, and repeat the
+       title/description. Also add this page to /sitemap.xml. For the share
+       image, add a card to tools/og/card.html and run tools/og/render.sh. -->
+  <link rel="canonical" href="https://vnktsh.com/apps/app-slug/" />
+  <meta property="og:site_name" content="vnktsh" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vnktsh.com/apps/app-slug/" />
+  <meta property="og:title" content="APP NAME — Venkatesh" />
+  <meta property="og:description" content="APP NAME is a ... for ..." />
+  <meta property="og:image" content="https://vnktsh.com/assets/images/og/og-site.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- EDIT: copy the SoftwareApplication JSON-LD block from
+       apps/money-book/index.html and fill it in for this app. -->
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />

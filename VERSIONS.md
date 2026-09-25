@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.4.2 — 25 September 2026
+
+SEO: robots.txt, sitemap.xml, canonical URLs, Open Graph/Twitter share cards, JSON-LD (WebSite, Person, SoftwareApplication), keyword-bearing MoneyBook title, noindex on 404.
+
 ## v1.4.1 — 25 September 2026
 
 MoneyBook page: added 'Why I built this' founder note above the closing call to action.
