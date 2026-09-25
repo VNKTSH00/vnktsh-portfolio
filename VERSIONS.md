@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.4.0 — 25 September 2026
+
+MoneyBook page: 'ten seconds a spend' theme — new hero tagline, 'Two ways to keep the habit' section (instant entry + nightly reminder), removed false FX-conversion claim.
+
 ## v1.3.3 — 25 September 2026
 
 MoneyBook gallery: added an 'On a Mac?' note under the screenshots inviting visitors to download the macOS build and look around themselves.
