@@ -1,5 +1,5 @@
 {
-  "version": "1.4.2",
-  "released": "2026-09-25T07:27:59Z",
-  "note": "SEO: robots.txt, sitemap.xml, canonical URLs, Open Graph/Twitter share cards, JSON-LD (WebSite, Person, SoftwareApplication), keyword-bearing MoneyBook title, noindex on 404."
+  "version": "1.4.3",
+  "released": "2026-09-25T08:31:50Z",
+  "note": "Mobile performance: self-hosted fonts (no Google Fonts round-trips) with preload, responsive screenshot sizes, WebP photos and icon, lazy-loaded About photos. No content changes."
 }
