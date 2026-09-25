@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.3.2 — 25 September 2026
+
+MoneyBook gallery: screenshots keep rounded corners with no border, spaced apart again. Stylesheet cache bumped to v14 so Cloudflare stops serving the old bezel styles.
+
 ## v1.3.1 — 25 September 2026
 
 MoneyBook gallery: dropped the phone bezel and rounded corners; the screenshots now sit flush, edge to edge, as one continuous screen.
