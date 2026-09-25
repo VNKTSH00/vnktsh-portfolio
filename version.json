@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
-  "released": "2026-09-25T07:15:29Z",
-  "note": "MoneyBook page: 'ten seconds a spend' theme — new hero tagline, 'Two ways to keep the habit' section (instant entry + nightly reminder), removed false FX-conversion claim."
+  "version": "1.4.1",
+  "released": "2026-09-25T07:16:56Z",
+  "note": "MoneyBook page: added 'Why I built this' founder note above the closing call to action."
 }

@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.4.1 — 25 September 2026
+
+MoneyBook page: added 'Why I built this' founder note above the closing call to action.
+
 ## v1.4.0 — 25 September 2026
 
 MoneyBook page: 'ten seconds a spend' theme — new hero tagline, 'Two ways to keep the habit' section (instant entry + nightly reminder), removed false FX-conversion claim.
