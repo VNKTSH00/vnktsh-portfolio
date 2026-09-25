@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.4.4 — 25 September 2026
+
+Contact page: added a direct mailto link for support@vnktsh.com alongside LinkedIn.
+
 ## v1.4.3 — 25 September 2026
 
 Mobile performance: self-hosted fonts (no Google Fonts round-trips) with preload, responsive screenshot sizes, WebP photos and icon, lazy-loaded About photos. No content changes.

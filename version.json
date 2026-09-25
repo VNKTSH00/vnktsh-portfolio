@@ -1,5 +1,5 @@
 {
-  "version": "1.4.3",
-  "released": "2026-09-25T08:31:50Z",
-  "note": "Mobile performance: self-hosted fonts (no Google Fonts round-trips) with preload, responsive screenshot sizes, WebP photos and icon, lazy-loaded About photos. No content changes."
+  "version": "1.4.4",
+  "released": "2026-09-25T09:05:10Z",
+  "note": "Contact page: added a direct mailto link for support@vnktsh.com alongside LinkedIn."
 }
