@@ -1,5 +1,5 @@
 {
-  "version": "1.2.2",
-  "released": "2026-09-24T16:03:28Z",
-  "note": "MoneyBook 1.4.3: Settings > About now shows 'Made by Venkatesh / www.vnktsh.com' as plain text rather than a link, and the app no longer ships any link-opening code. Downloads, sizes and SHA-256 fingerprints updated."
+  "version": "1.3.0",
+  "released": "2026-09-25T06:44:18Z",
+  "note": "MoneyBook page: new 'Have a look around' gallery, a swipeable shelf of ten app screenshots (entries, add entry, category and account pickers, stats, budget, new budget, categories, appearance, settings) with arrow buttons and a counter. Stylesheet cache bumped to v13."
 }

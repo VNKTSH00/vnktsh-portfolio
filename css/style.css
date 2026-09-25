@@ -1401,3 +1401,112 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
 @media (max-width: 680px) {
   .dl-card { padding: 22px; }
 }
+
+/* ---------- Screenshot gallery ----------
+   A horizontal shelf of phone screens (MoneyBook page). Plain CSS
+   scroll-snap, so it swipes on touch, scrolls with a trackpad and
+   pans with the arrow keys once focused. main.js only adds the
+   prev/next buttons and the counter; without it the shelf still works. */
+.gallery { position: relative; }
+.gallery-track {
+  list-style: none;
+  /* Bleed into the container's gutter and pad back out, so the phones'
+     shadows have room and aren't clipped into a visible rectangle. */
+  margin: 0 -24px;
+  padding: 18px 24px 34px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(220px, 62vw, 270px);
+  gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-border-strong) transparent;
+}
+.gallery-track:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+.gallery-slide { scroll-snap-align: start; }
+.gallery-slide figure { margin: 0; }
+
+/* The phone: a dark bezel so the app's cool greys sit on the warm
+   page as an object on the table, not a patch of a different site. */
+.shot {
+  border: 7px solid var(--ink);
+  border-radius: 34px;
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: 0 10px 22px rgba(74, 48, 26, 0.16);
+  aspect-ratio: 600 / 1226;
+  transition: transform 0.25s ease;
+}
+.gallery-slide:hover .shot { transform: translateY(-4px); }
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 27px;
+}
+.gallery-slide figcaption {
+  margin-top: 20px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.gallery-slide figcaption strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.shot-num {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--terracotta-deep);
+  margin-bottom: 6px;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+.gallery-controls[hidden] { display: none; }
+.gallery-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--card-border-strong);
+  background: var(--card);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+.gallery-btn .ico { width: 20px; height: 20px; stroke-width: 2; }
+.gallery-btn:hover:not(:disabled) { border-color: var(--terracotta); transform: translateY(-2px); }
+.gallery-btn:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+.gallery-btn:disabled { opacity: 0.35; cursor: default; }
+.gallery-count {
+  min-width: 64px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot, .gallery-slide:hover .shot { transition: none; transform: none; }
+}

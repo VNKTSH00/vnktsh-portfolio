@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.3.0 — 25 September 2026
+
+MoneyBook page: new 'Have a look around' gallery, a swipeable shelf of ten app screenshots (entries, add entry, category and account pickers, stats, budget, new budget, categories, appearance, settings) with arrow buttons and a counter. Stylesheet cache bumped to v13.
+
 ## v1.2.2 — 24 September 2026
 
 MoneyBook 1.4.3: Settings > About now shows 'Made by Venkatesh / www.vnktsh.com' as plain text rather than a link, and the app no longer ships any link-opening code. Downloads, sizes and SHA-256 fingerprints updated.

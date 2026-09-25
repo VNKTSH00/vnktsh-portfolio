@@ -46,6 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* Screenshot gallery — prev/next buttons and a counter over a
+     scroll-snap track. The track scrolls fine on its own; this only
+     adds the buttons, so they stay hidden until this runs. */
+  document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+    const track = gallery.querySelector('.gallery-track');
+    const slides = [...track.children];
+    const controls = gallery.querySelector('.gallery-controls');
+    const [prev, next] = gallery.querySelectorAll('.gallery-btn');
+    const current = gallery.querySelector('[data-current]');
+    const smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+    const step = () => slides[1].offsetLeft - slides[0].offsetLeft;
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const index = Math.round(track.scrollLeft / step());
+      // At the far end several slides are visible at once; count the last one.
+      current.textContent = track.scrollLeft >= max - 2 ? slides.length : index + 1;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+
+    [prev, next].forEach((btn) =>
+      btn.addEventListener('click', () =>
+        track.scrollBy({ left: Number(btn.dataset.dir) * step(), behavior: smooth })
+      )
+    );
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    controls.hidden = false;
+    update();
+  });
+
   /* Contact form — POSTs to Web3Forms, which relays it server-side to
      whichever inbox the access key is mapped to in the Web3Forms dashboard.
      The address is deliberately not named here: this file is served publicly,
