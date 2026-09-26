@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.5.0 — 26 September 2026
+
+Web pages: a new Web menu (web.html) setting out the site's web skills, each with a real figure as proof, and a recipe page (web/this-site/) on how vnktsh.com is built, with the changes that were sent back. Web link added to every nav and footer; stylesheet cache bumped to v17.
+
 ## v1.4.5 — 26 September 2026
 
 Apps page: MoneyBook card is now clickable through to its features page, matching the home page.

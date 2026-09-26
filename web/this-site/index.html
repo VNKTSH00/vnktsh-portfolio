@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How vnktsh.com Is Built — The Recipe</title>
+  <meta name="description" content="How vnktsh.com was made, step by step: plain HTML, CSS and JavaScript, a contrast-checked token system, generated SVG art, self-hosted fonts, SEO, and versioned releases, built with AI as sous-chef." />
+  <meta name="theme-color" content="#fbf6ec" />
+  <link rel="canonical" href="https://vnktsh.com/web/this-site/" />
+
+  <!-- Social previews (Open Graph + Twitter/X) -->
+  <meta property="og:site_name" content="vnktsh" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://vnktsh.com/web/this-site/" />
+  <meta property="og:title" content="How vnktsh.com Is Built — The Recipe" />
+  <meta property="og:description" content="The site you're reading, written up as a recipe: ingredients, method, and the dishes sent back." />
+  <meta property="og:image" content="https://vnktsh.com/assets/images/og/og-site.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="vnktsh.com — apps, made like a meal for friends" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vnktsh.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Web", "item": "https://vnktsh.com/web.html" },
+      { "@type": "ListItem", "position": 3, "name": "How vnktsh.com is built", "item": "https://vnktsh.com/web/this-site/" }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+
+  <link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="../../css/style.css?v=17" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../../index.html" class="logo">
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../apps.html">Apps</a></li>
+        <li><a href="../../web.html" class="active">Web</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../contact.html" class="nav-cta">Say hello</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-1"></div>
+      <div class="container">
+        <a href="../../web.html" class="back-link">← Back to the menu</a>
+        <span class="eyebrow"><span class="dot"></span> Recipe · the site you're reading</span>
+        <h1>vnktsh.com, <span class="gradient-text">from scratch</span></h1>
+        <p>
+          No framework, no page builder, no template. Just files a browser can open, cooked
+          the way I'd cook for friends: slowly, tasting as I go, and sending things back
+          when they aren't right.
+        </p>
+        <!-- Keep these figures true: releases = entries in VERSIONS.md. -->
+        <div class="recipe-meta">
+          <div>Serves<b>Anyone who lands here</b></div>
+          <div>Framework<b>None</b></div>
+          <div>Build step<b>None</b></div>
+          <div>First served<b>29 Aug 2026</b></div>
+          <div>Releases<b>19</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INGREDIENTS ================= -->
+    <section class="section reveal" id="ingredients">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ingredients</h2>
+          <p>Short list, on purpose. Everything the page needs ships with the page.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>On the plate</h3>
+            <p style="color:var(--ink-soft);margin-bottom:16px;">What your browser downloads.</p>
+            <ul class="ingredient-list">
+              <li><div><strong>HTML</strong> <span>— one file per page</span></div></li>
+              <li><div><strong>CSS</strong> <span>— one stylesheet, driven by custom properties</span></div></li>
+              <li><div><strong>JavaScript</strong> <span>— one small script, no libraries</span></div></li>
+              <li><div><strong>Fraunces &amp; Inter</strong> <span>— variable fonts, self-hosted</span></div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>In the kitchen</h3>
+            <p style="color:var(--ink-soft);margin-bottom:16px;">Tools that never reach you.</p>
+            <ul class="ingredient-list">
+              <li><div><strong>Python</strong> <span>— draws the background motifs</span></div></li>
+              <li><div><strong>Headless Chrome</strong> <span>— renders the link-preview cards</span></div></li>
+              <li><div><strong>Bash + git</strong> <span>— cuts, tags and restores releases</span></div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>From the market</h3>
+            <p style="color:var(--ink-soft);margin-bottom:16px;">The two outside services.</p>
+            <ul class="ingredient-list">
+              <li><div><strong>Cloudflare</strong> <span>— serves and caches the site</span></div></li>
+              <li><div><strong>Web3Forms</strong> <span>— delivers the contact form</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= METHOD =================
+         Steps are in the order the site was actually built. The
+         "My call" lines are Venkatesh's decisions — check with him
+         before rewording them. -->
+    <section class="section section-alt reveal has-frond" id="method">
+      <div class="container">
+        <svg class="ornament" viewBox="0 0 150 30" aria-hidden="true">
+          <line x1="2" y1="16" x2="52" y2="16" />
+          <line x1="98" y1="16" x2="148" y2="16" />
+          <path class="steam-rise" d="M67 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M75 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          <path class="steam-rise" d="M83 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+        </svg>
+        <div class="section-head">
+          <h2>Method</h2>
+          <p>
+            AI did much of the chopping. Each step says what was built and the decision
+            that was mine to make.
+          </p>
+        </div>
+        <ol class="method">
+          <li id="argument">
+            <h3>Write the argument before the page</h3>
+            <p>
+              The site started as a paragraph, not a layout: software can be given away like a
+              home-cooked meal. That paragraph sits on the home page word for word, and every
+              design choice after it had to agree with it.
+            </p>
+            <p class="my-call"><b>My call</b>Nothing here should read like a pricing page.</p>
+          </li>
+          <li id="tokens">
+            <h3>Put the whole look in one place</h3>
+            <p>
+              Every colour, font, radius and shadow is a CSS custom property in a single
+              <code>:root</code> block. Change a token and the whole site re-themes. The palette
+              is contrast-checked against the paper background: body text and links clear
+              4.5 : 1, and the gradient headings clear 3 : 1 at the large sizes they're used at.
+            </p>
+            <p class="my-call"><b>My call</b>Warm paper and terracotta, with a soft serif instead of a tech-looking sans.</p>
+          </li>
+          <li id="motifs">
+            <h3>Draw the background in code</h3>
+            <p>
+              The faint line art behind the pages is five motifs, generated by a Python script
+              and embedded as SVG data URIs, so they cost no extra downloads. The important
+              one is a <em>pulli kolam</em>, the looped pattern drawn in rice flour at the
+              threshold of a Tamil home to welcome whoever arrives. They stay at 5 to 8 percent
+              opacity so they never compete with the words.
+            </p>
+            <p class="my-call"><b>My call</b>The kolam goes behind every hero, because it's how a home says welcome.</p>
+          </li>
+          <li id="phone">
+            <h3>Taste it on a phone</h3>
+            <p>
+              On an iPhone, a sideways swipe used to slide the page into blank space. The cause
+              was a decorative shape with nothing clipping it, plus a Safari quirk where a sticky
+              header defeats <code>overflow-x: hidden</code> on the body. Now every section
+              clips its own decoration, and the page is checked to be exactly as wide as the screen.
+              Animations switch off for anyone who has asked their device for reduced motion.
+            </p>
+            <p class="my-call"><b>My call</b>If it's awkward on my phone, it isn't finished.</p>
+          </li>
+          <li id="speed">
+            <h3>Make it quick to open</h3>
+            <p>
+              The fonts used to come from Google Fonts, which meant two extra connections before
+              the first word could render. They're now self-hosted variable fonts, trimmed to the
+              Latin character sets, with the two most-used files preloaded. Photos are WebP, the
+              About photos load lazily, and all of the site's behaviour fits in one small script.
+            </p>
+            <p class="my-call"><b>My call</b>No framework. A page this size doesn't need one.</p>
+          </li>
+          <li id="findable">
+            <h3>Make it easy to find and share</h3>
+            <p>
+              Every page has a canonical URL, a sitemap entry and Open Graph tags. Structured data
+              tells search engines who made the site and what MoneyBook is. The link-preview images
+              are an HTML page rendered to 1200 × 630 by headless Chrome, then saved as JPEG so
+              each stays under 100 KB.
+            </p>
+          </li>
+          <li id="forms">
+            <h3>Take messages without a server</h3>
+            <p>
+              The contact form posts to Web3Forms, which delivers each message to my inbox, so
+              there's no server of mine to run. The page shows a friendly message whether the send
+              works or fails, and a hidden honeypot field catches most spam bots.
+            </p>
+          </li>
+          <li id="versions">
+            <h3>Keep every version</h3>
+            <p>
+              A small shell script cuts each release: it tags it in git, logs a line in the
+              version history, and writes a <code>version.json</code> so anyone can see what's live.
+              Any old version can be restored as a new release, so nothing is ever lost. Because the
+              CDN caches the stylesheet hard, its <code>?v=</code> number goes up with every CSS change.
+            </p>
+            <p class="my-call"><b>My call</b>Every visible change gets a release, however small.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= SENT BACK =================
+         Real episodes from the site's history (git log + VERSIONS.md).
+         Add a ticket when a future change gets reverted or reworked. -->
+    <section class="section reveal has-utensils" id="sent-back">
+      <div class="container">
+        <div class="section-head">
+          <h2>Sent back to the kitchen</h2>
+          <p>
+            A sous-chef gets things wrong, and so do I. These are real changes that went out,
+            didn't taste right, and came back.
+          </p>
+        </div>
+        <div class="ticket-rail">
+          <ol class="ticket-track" tabindex="0" aria-label="Changes that were sent back, oldest first">
+            <li class="ticket">
+              <div class="ticket-head"><span>Mobile</span><span>29 Aug 2026</span></div>
+              <dl>
+                <div><dt>Served</dt><dd>A page that slid sideways into blank space when swiped on an iPhone.</dd></div>
+                <div><dt>Sent back</dt><dd class="sent-back">Clip every section, work around Safari's sticky-header bug, and stop sideways rubber-banding.</dd></div>
+              </dl>
+            </li>
+            <li class="ticket">
+              <div class="ticket-head"><span>About page</span><span>20 Sep 2026</span></div>
+              <dl>
+                <div><dt>Served</dt><dd>Line-drawn icons on the "Beyond the code" headings. They rendered oversized and solid black.</dd></div>
+                <div><dt>Sent back</dt><dd class="sent-back">Drop the icons. Plain headings read better there.</dd></div>
+              </dl>
+            </li>
+            <li class="ticket">
+              <div class="ticket-head"><span>MoneyBook gallery</span><span>25 Sep 2026</span></div>
+              <dl>
+                <div><dt>Served</dt><dd>Screenshots set flush, edge to edge, with no rounded corners.</dd></div>
+                <div><dt>Sent back</dt><dd class="sent-back">Rounded corners back, no border, spaced apart again. Released the same day.</dd></div>
+              </dl>
+            </li>
+            <li class="ticket">
+              <div class="ticket-head"><span>MoneyBook page</span><span>25 Sep 2026</span></div>
+              <dl>
+                <div><dt>Served</dt><dd>A feature line saying MoneyBook converts between currencies.</dd></div>
+                <div><dt>Sent back</dt><dd class="sent-back">Removed. It doesn't, and this site only claims what's true.</dd></div>
+              </dl>
+            </li>
+          </ol>
+        </div>
+        <p class="ticket-hint">Oldest on the left. Scroll the rail for more.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="cta-band">
+          <h2>That's the whole recipe.</h2>
+          <p>
+            If something here was useful, or you'd have cooked it differently, I'd like to hear
+            about it.
+          </p>
+          <div class="hero-actions">
+            <a href="../../contact.html" class="btn btn-primary">Tell me what you thought</a>
+            <a href="../../web.html" class="btn btn-ghost">Back to the menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
+        <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+        <ul class="footer-links">
+          <li><a href="../../apps.html">Apps</a></li>
+          <li><a href="../../web.html">Web</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

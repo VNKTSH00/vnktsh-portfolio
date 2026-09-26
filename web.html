@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development by Venkatesh — The Web Menu</title>
+  <meta name="description" content="The web skills behind vnktsh.com, set out like a menu: design tokens, accessible colour, performance, SEO, versioning and building with AI, each with the proof on this site." />
+  <meta name="theme-color" content="#fbf6ec" />
+  <link rel="canonical" href="https://vnktsh.com/web.html" />
+
+  <!-- Social previews (Open Graph + Twitter/X) -->
+  <meta property="og:site_name" content="vnktsh" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vnktsh.com/web.html" />
+  <meta property="og:title" content="Web Development by Venkatesh — The Web Menu" />
+  <meta property="og:description" content="The web skills behind vnktsh.com, set out like a menu, each with the proof on this site." />
+  <meta property="og:image" content="https://vnktsh.com/assets/images/og/og-site.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="vnktsh.com — apps, made like a meal for friends" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css?v=17" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        vnktsh
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="web.html" class="active">Web</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Say hello</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="blob blob-1"></div>
+      <div class="container">
+        <span class="eyebrow"><span class="dot"></span> Web, cooked in plain HTML, CSS and JavaScript</span>
+        <h1>Today's <span class="gradient-text">web menu</span></h1>
+        <p>
+          Everything I know about building for the web is served on one plate: the site
+          you're reading. Where a menu would print a price, this one prints the proof.
+          Pick any line to see how it was made.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= THE MENU =================
+         Each dish links to the step on the recipe page that explains it.
+         The right-hand figures are real — keep them true when the site
+         changes (release count and ?v= especially). -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="menu-card">
+          <svg class="ornament" viewBox="0 0 150 30" aria-hidden="true">
+            <line x1="2" y1="16" x2="52" y2="16" />
+            <line x1="98" y1="16" x2="148" y2="16" />
+            <path class="steam-rise" d="M67 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+            <path class="steam-rise" d="M75 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+            <path class="steam-rise" d="M83 27c-4.5-3.5-4.5-6.5 0-10s4.5-6.5 0-10" />
+          </svg>
+          <h2 class="menu-title">vnktsh.com, à la carte</h2>
+          <p class="menu-sub">One site, broken down into the skills it took.</p>
+
+          <div class="course">
+            <h3>Look &amp; feel</h3>
+            <ul class="dish-list">
+              <li>
+                <a class="dish" href="web/this-site/index.html#tokens">
+                  <span><span class="dish-name">Design systems in plain CSS</span>
+                  <span class="dish-note">Every colour, font and shadow is one token</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">1 :root</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#tokens">
+                  <span><span class="dish-name">Accessible colour</span>
+                  <span class="dish-note">Body text and links checked against the page</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">4.5 : 1</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#motifs">
+                  <span><span class="dish-name">Generated SVG artwork</span>
+                  <span class="dish-note">Line-art backgrounds drawn by a Python script</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">5 motifs</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="course">
+            <h3>From the stove</h3>
+            <ul class="dish-list">
+              <li>
+                <a class="dish" href="web/this-site/index.html#speed">
+                  <span><span class="dish-name">HTML, CSS &amp; plain JavaScript</span>
+                  <span class="dish-note">No framework and no build step</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">0 dependencies</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#phone">
+                  <span><span class="dish-name">Mobile-first layout</span>
+                  <span class="dish-note">No sideways scroll on any page</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">0 px overflow</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#speed">
+                  <span><span class="dish-name">Web performance</span>
+                  <span class="dish-note">Self-hosted variable fonts, WebP, preloads</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">0 font CDNs</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#findable">
+                  <span><span class="dish-name">SEO &amp; share cards</span>
+                  <span class="dish-note">Sitemap, structured data, rendered preview images</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">1200 × 630</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#forms">
+                  <span><span class="dish-name">Forms without a server</span>
+                  <span class="dish-note">Contact form relayed by a form service, with a spam trap</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">0 servers</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="course">
+            <h3>Kitchen habits</h3>
+            <ul class="dish-list">
+              <li>
+                <a class="dish" href="web/this-site/index.html#versions">
+                  <span><span class="dish-name">Versioning &amp; rollback</span>
+                  <span class="dish-note">Every release tagged, any version restorable</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">19 releases</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#versions">
+                  <span><span class="dish-name">Cache busting behind a CDN</span>
+                  <span class="dish-note">Stylesheet version bumped on every change</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">?v=17</span>
+                </a>
+              </li>
+              <li>
+                <a class="dish" href="web/this-site/index.html#sent-back">
+                  <span><span class="dish-name">Building with AI</span>
+                  <span class="dish-note">AI preps, I decide, and some dishes go back</span></span>
+                  <span class="dish-dots" aria-hidden="true"></span>
+                  <span class="dish-proof">4 sent back</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-foot">
+            <span>Served with AI as sous-chef</span>
+            <span>Total 0.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE RECIPE ================= -->
+    <section class="section section-alt reveal has-code">
+      <div class="container">
+        <div class="quiet-band">
+          <p>
+            Want the whole thing in order, from the first idea to the latest release,
+            including the dishes I sent back?
+          </p>
+          <a href="web/this-site/index.html">Read the full recipe →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Something on the menu you'd like explained?</h2>
+          <p>
+            Ask me how any of it works. I'm happy to talk through the parts that took
+            the longest to get right.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Say hello</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-creed">Made to be shared, not sold.</p>
+      <div class="footer-inner">
+        <span class="footer-note">© <span id="year"></span> Venkatesh · vnktsh.com</span>
+        <ul class="footer-links">
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
