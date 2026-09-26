@@ -46,6 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* Whole-card links — cards with real interactive children (download
+     buttons, an explicit "see more" link) can't be wrapped in an <a>
+     without nesting anchors, so a click anywhere else on the card
+     navigates instead. Clicks on an inner link/button keep their own
+     destination. */
+  document.querySelectorAll('[data-card-link]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      window.location.href = card.dataset.cardLink;
+    });
+  });
+
   /* Screenshot gallery — prev/next buttons and a counter over a
      scroll-snap track. The track scrolls fine on its own; this only
      adds the buttons, so they stay hidden until this runs. */

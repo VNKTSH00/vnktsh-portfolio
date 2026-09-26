@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.4.5 — 26 September 2026
+
+Apps page: MoneyBook card is now clickable through to its features page, matching the home page.
+
 ## v1.4.4 — 25 September 2026
 
 Contact page: added a direct mailto link for support@vnktsh.com alongside LinkedIn.

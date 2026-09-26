@@ -623,6 +623,10 @@ strong { color: var(--ink); font-weight: 600; }
   transform: translateY(-6px);
   box-shadow: var(--shadow);
 }
+/* Cards wired up for whole-card navigation via main.js (see
+   data-card-link) — the inner links/buttons still show their own
+   pointer, this just signals the rest of the card is clickable too. */
+.app-card[data-card-link] { cursor: pointer; }
 
 .app-card-media {
   aspect-ratio: 1;
