@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.5.1 — 27 September 2026
+
+About page: real photos replaced with anime-style illustrations (top portrait plus all three 'Beyond the code' cards) to keep the site's public face private.
+
 ## v1.5.0 — 26 September 2026
 
 Web pages: a new Web menu (web.html) setting out the site's web skills, each with a real figure as proof, and a recipe page (web/this-site/) on how vnktsh.com is built, with the changes that were sent back. Web link added to every nav and footer; stylesheet cache bumped to v17.

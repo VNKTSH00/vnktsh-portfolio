@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
-  "released": "2026-09-26T18:11:04Z",
-  "note": "Web pages: a new Web menu (web.html) setting out the site's web skills, each with a real figure as proof, and a recipe page (web/this-site/) on how vnktsh.com is built, with the changes that were sent back. Web link added to every nav and footer; stylesheet cache bumped to v17."
+  "version": "1.5.1",
+  "released": "2026-09-27T05:53:07Z",
+  "note": "About page: real photos replaced with anime-style illustrations (top portrait plus all three 'Beyond the code' cards) to keep the site's public face private."
 }
