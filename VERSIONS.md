@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.8.0 — 30 September 2026
+
+MoneyBook for iPhone is live: an on-device web app at money-book-online.pages.dev with Safari/Chrome install steps; nothing collected on any platform.
+
 ## v1.7.1 — 30 September 2026
 
 iPhone card back to 'coming soon' while an on-device iPhone version is built; synced web app and its privacy page taken down.
