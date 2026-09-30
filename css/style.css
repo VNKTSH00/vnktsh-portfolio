@@ -1475,6 +1475,28 @@ a.card:hover .link-cta { color: var(--amber-deep); }
   box-shadow: 0 0 0 4px var(--plat-glow, rgba(194, 96, 58, 0.2)), var(--shadow);
 }
 
+/* Accent stripe: a bar of the platform colour that grows across the top
+   edge, left to right, on hover (and stays on the card a hero button
+   jumped to). overflow: hidden clips it to the rounded corners; it does
+   not clip the card's own shadow. */
+.dl-card {
+  position: relative;
+  overflow: hidden;
+}
+.dl-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--plat-fill, var(--gradient-deep));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dl-card:target::before { transform: scaleX(1); }
+
 /* Hover: the card warms to its platform's colour — it lifts, the border
    and glow take the accent, the icon tile fills with it, and the step
    numbers follow. Only on devices that really hover, so a tap on a phone
@@ -1493,6 +1515,7 @@ a.card:hover .link-cta { color: var(--amber-deep); }
     box-shadow: 0 0 0 4px var(--plat-glow, rgba(194, 96, 58, 0.2)),
                 0 22px 48px var(--plat-glow, rgba(160, 71, 42, 0.24));
   }
+  .dl-card:hover::before { transform: scaleX(1); }
   .dl-card:hover .icon-tile {
     background-color: var(--plat, var(--terracotta-deep)); /* solid, so it fades — gradients can't */
     color: var(--ink-cream);
@@ -1506,6 +1529,7 @@ a.card:hover .link-cta { color: var(--amber-deep); }
 @media (prefers-reduced-motion: reduce) {
   .dl-card:hover,
   .dl-card:hover .icon-tile { transform: none; }
+  .dl-card::before { transition: none; }
 }
 
 /* Version · size · requirement, in that order. Small, but people look for it. */

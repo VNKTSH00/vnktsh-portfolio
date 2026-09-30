@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.9.3 — 30 September 2026
+
+Accent stripe: a bar of each platform's colour grows across the top of its MoneyBook download card on hover, and stays on the card a hero button jumped to.
+
 ## v1.9.2 — 30 September 2026
 
 MoneyBook download cards warm to their platform colour on hover: lift, accent border and glow, filled icon tile, tinted step numbers.
