@@ -1,17 +1,18 @@
-MoneyBook 1.4.3 — file fingerprints
+MoneyBook 1.6.0 — file fingerprints
 ===================================
 
 Verify a download matches what was published here before you install it.
 If a number below doesn't match your copy, the file was altered in transit —
 delete it and download again.
 
-  macOS / Linux:  shasum -a 256 MoneyBook-1.4.3.apk
-  Windows:        certutil -hashfile MoneyBook-1.4.3.apk SHA256
+  macOS / Linux:  shasum -a 256 MoneyBook-1.6.0.apk
+  Windows:        certutil -hashfile MoneyBook-1.6.0.apk SHA256
 
 SHA-256
 -------
-4efedbd7dad57479198df7d49cc39ae88dc83890f49bcce8d354f59b369ddf7c  MoneyBook-1.4.3.apk
-901b72a7ec0ae4940c12568146b258d8814f238e9c5e9455083194df2d4da3b9  MoneyBook-1.4.3.dmg
+446613bdaba1d968da492a048bb7a5baa66f9a7115e117a0e8dd87cbff3bd754  MoneyBook-1.6.0.apk
+f55db07ee5464730a84d8a2452bd71b1ede1dabfb0075accd200089239075a05  MoneyBook-1.6.0.dmg
+4bc83c42c502ebc6e94bb2d61adab32fd54fc3111770e48cd6d8f9c0f5d2ef6b  MoneyBook-1.6.0-Setup.exe
 
 Android signing certificate
 ---------------------------
@@ -23,4 +24,4 @@ is why each new version installs cleanly over the last.
   SHA-256  cf:a7:f9:38:88:21:66:d9:a1:89:b2:10:33:9b:21:fc:22:15:b2:ef:48:53:a2:b1:08:8a:40:c6:c1:cd:62:2c
   SHA-1    9a:d5:aa:a7:4f:9e:99:92:23:d9:af:da:ec:26:2f:8d:17:e9:44:a2
 
-  Check yours with:  apksigner verify --print-certs MoneyBook-1.4.3.apk
+  Check yours with:  apksigner verify --print-certs MoneyBook-1.6.0.apk

@@ -1,5 +1,5 @@
 {
-  "version": "1.5.1",
-  "released": "2026-09-27T05:53:07Z",
-  "note": "About page: real photos replaced with anime-style illustrations (top portrait plus all three 'Beyond the code' cards) to keep the site's public face private."
+  "version": "1.6.0",
+  "released": "2026-09-30T15:14:42Z",
+  "note": "MoneyBook 1.6.0 for Android and macOS, plus the first Windows installer; Apps page card now has one 'Download MoneyBook' button leading to the platform picker."
 }

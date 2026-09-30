@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.6.0 — 30 September 2026
+
+MoneyBook 1.6.0 for Android and macOS, plus the first Windows installer; Apps page card now has one 'Download MoneyBook' button leading to the platform picker.
+
 ## v1.5.1 — 27 September 2026
 
 About page: real photos replaced with anime-style illustrations (top portrait plus all three 'Beyond the code' cards) to keep the site's public face private.
