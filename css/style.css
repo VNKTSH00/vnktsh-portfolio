@@ -440,10 +440,10 @@ strong { color: var(--ink); font-weight: 600; }
    macOS, amber Windows). Put .plat-* on the card or the button; .btn-plat
    picks the colours up from whichever ancestor set them. Every fill clears
    4.7:1 against the cream label. */
-.plat-android { --plat: var(--sage-deep);       --plat-fill: linear-gradient(112deg, #45532f, #5b6b44); --plat-glow: rgba(91, 107, 68, 0.28); }
-.plat-iphone  { --plat: var(--terracotta-deep); --plat-fill: linear-gradient(112deg, #8e3f26, #a44a2b); --plat-glow: rgba(160, 71, 42, 0.28); }
-.plat-macos   { --plat: var(--ink);             --plat-fill: linear-gradient(112deg, #2a1f16, #4a3a2c); --plat-glow: rgba(42, 31, 22, 0.26); }
-.plat-windows { --plat: var(--amber-deep);      --plat-fill: linear-gradient(112deg, #7a520a, #96650c); --plat-glow: rgba(150, 101, 12, 0.28); }
+.plat-android { --plat: var(--sage-deep);       --plat-fill: linear-gradient(112deg, #45532f, #5b6b44); --plat-glow: rgba(91, 107, 68, 0.28); --plat-tint: rgba(91, 107, 68, 0.13); }
+.plat-iphone  { --plat: var(--terracotta-deep); --plat-fill: linear-gradient(112deg, #8e3f26, #a44a2b); --plat-glow: rgba(160, 71, 42, 0.28); --plat-tint: rgba(160, 71, 42, 0.13); }
+.plat-macos   { --plat: var(--ink);             --plat-fill: linear-gradient(112deg, #2a1f16, #4a3a2c); --plat-glow: rgba(42, 31, 22, 0.26); --plat-tint: rgba(42, 31, 22, 0.13); }
+.plat-windows { --plat: var(--amber-deep);      --plat-fill: linear-gradient(112deg, #7a520a, #96650c); --plat-glow: rgba(150, 101, 12, 0.28); --plat-tint: rgba(150, 101, 12, 0.13); }
 
 .btn-plat {
   background: var(--plat-fill, var(--gradient-deep));
@@ -1468,11 +1468,44 @@ a.card:hover .link-cta { color: var(--amber-deep); }
    card they land on needs to clear the sticky header and say "this one". */
 .dl-card {
   scroll-margin-top: 96px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .dl-card:target {
   border-color: var(--plat, var(--terracotta));
   box-shadow: 0 0 0 4px var(--plat-glow, rgba(194, 96, 58, 0.2)), var(--shadow);
+}
+
+/* Hover: the card warms to its platform's colour — it lifts, the border
+   and glow take the accent, the icon tile fills with it, and the step
+   numbers follow. Only on devices that really hover, so a tap on a phone
+   doesn't leave a card stuck "lit". */
+.dl-card .icon-tile,
+.dl-steps li::before {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+@media (hover: hover) {
+  .dl-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--plat, var(--terracotta));
+    box-shadow: 0 22px 48px var(--plat-glow, rgba(160, 71, 42, 0.24));
+  }
+  .dl-card:target:hover {
+    box-shadow: 0 0 0 4px var(--plat-glow, rgba(194, 96, 58, 0.2)),
+                0 22px 48px var(--plat-glow, rgba(160, 71, 42, 0.24));
+  }
+  .dl-card:hover .icon-tile {
+    background-color: var(--plat, var(--terracotta-deep)); /* solid, so it fades — gradients can't */
+    color: var(--ink-cream);
+    transform: rotate(-6deg) scale(1.06);
+  }
+  .dl-card:hover .dl-steps li::before {
+    background: var(--plat-tint, rgba(194, 96, 58, 0.14));
+    color: var(--plat, var(--terracotta-deep));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dl-card:hover,
+  .dl-card:hover .icon-tile { transform: none; }
 }
 
 /* Version · size · requirement, in that order. Small, but people look for it. */

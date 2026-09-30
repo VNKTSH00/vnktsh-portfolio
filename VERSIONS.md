@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.9.2 — 30 September 2026
+
+MoneyBook download cards warm to their platform colour on hover: lift, accent border and glow, filled icon tile, tinted step numbers.
+
 ## v1.9.1 — 30 September 2026
 
 Bump stylesheet to ?v=19: Cloudflare cached ?v=18 before the v1.9.0 deploy landed.

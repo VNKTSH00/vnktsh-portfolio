@@ -1,5 +1,5 @@
 {
-  "version": "1.9.1",
-  "released": "2026-09-30T17:27:50Z",
-  "note": "Bump stylesheet to ?v=19: Cloudflare cached ?v=18 before the v1.9.0 deploy landed."
+  "version": "1.9.2",
+  "released": "2026-09-30T17:43:33Z",
+  "note": "MoneyBook download cards warm to their platform colour on hover: lift, accent border and glow, filled icon tile, tinted step numbers."
 }
