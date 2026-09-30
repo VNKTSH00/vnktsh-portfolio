@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.6.1 — 30 September 2026
+
+MoneyBook download cards: all store buttons read 'coming soon'; Windows steps no longer list a missing feature.
+
 ## v1.6.0 — 30 September 2026
 
 MoneyBook 1.6.0 for Android and macOS, plus the first Windows installer; Apps page card now has one 'Download MoneyBook' button leading to the platform picker.
