@@ -1,5 +1,5 @@
 {
-  "version": "1.8.0",
-  "released": "2026-09-30T16:44:05Z",
-  "note": "MoneyBook for iPhone is live: an on-device web app at money-book-online.pages.dev with Safari/Chrome install steps; nothing collected on any platform."
+  "version": "1.9.0",
+  "released": "2026-09-30T17:24:43Z",
+  "note": "Platform-coloured MoneyBook buttons that jump to each download card; 'Save as Web App on iPhone'; nav links aligned with Say hello; one de-duplicated feature grid (no bank-statement import); Web page speaks to clients; home page adds websites and a quiet paid-work section."
 }

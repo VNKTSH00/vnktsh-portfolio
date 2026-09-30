@@ -306,6 +306,7 @@ strong { color: var(--ink); font-weight: 600; }
 
 .nav-links {
   display: flex;
+  align-items: center; /* centre the text links on the taller "Say hello" pill */
   gap: 32px;
   list-style: none;
   margin: 0;
@@ -433,6 +434,23 @@ strong { color: var(--ink); font-weight: 600; }
 .btn-ghost:hover { border-color: var(--terracotta); background: rgba(194, 96, 58, 0.05); }
 
 .btn-sm { padding: 9px 18px; font-size: 0.85rem; }
+
+/* Platform accents — one warm colour per platform, matching the icon tile
+   on that platform's download card (sage Android, terracotta iPhone, ink
+   macOS, amber Windows). Put .plat-* on the card or the button; .btn-plat
+   picks the colours up from whichever ancestor set them. Every fill clears
+   4.7:1 against the cream label. */
+.plat-android { --plat: var(--sage-deep);       --plat-fill: linear-gradient(112deg, #45532f, #5b6b44); --plat-glow: rgba(91, 107, 68, 0.28); }
+.plat-iphone  { --plat: var(--terracotta-deep); --plat-fill: linear-gradient(112deg, #8e3f26, #a44a2b); --plat-glow: rgba(160, 71, 42, 0.28); }
+.plat-macos   { --plat: var(--ink);             --plat-fill: linear-gradient(112deg, #2a1f16, #4a3a2c); --plat-glow: rgba(42, 31, 22, 0.26); }
+.plat-windows { --plat: var(--amber-deep);      --plat-fill: linear-gradient(112deg, #7a520a, #96650c); --plat-glow: rgba(150, 101, 12, 0.28); }
+
+.btn-plat {
+  background: var(--plat-fill, var(--gradient-deep));
+  color: var(--ink-cream);
+  box-shadow: 0 10px 26px var(--plat-glow, rgba(160, 71, 42, 0.24));
+}
+.btn-plat:hover { box-shadow: 0 14px 32px var(--plat-glow, rgba(160, 71, 42, 0.34)); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -725,6 +743,17 @@ strong { color: var(--ink); font-weight: 600; }
    link (avoids an <a> nested inside an <a>) — highlight it whenever any
    part of the card is hovered, not just the span's own small hit area. */
 a.app-card:hover .link-cta { color: var(--amber-deep); }
+
+/* Same idea for a plain .card that is itself a link (home page bookings). */
+a.card { display: flex; flex-direction: column; }
+a.card .link-cta {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--link);
+}
+a.card:hover .link-cta { color: var(--amber-deep); }
 
 /* ---------- The manifesto ----------
    The centre of the site: the philosophy, set like a note left
@@ -1415,6 +1444,8 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
   color: var(--link);
 }
 .quiet-band a:hover { color: var(--amber-deep); }
+.quiet-band a.btn,
+.quiet-band a.btn:hover { font-size: 0.95rem; color: var(--ink-cream); }
 
 /* ---------- Download cards ----------
    Used on the MoneyBook page. Each card is one platform: what you get, the
@@ -1432,6 +1463,17 @@ a.app-card:hover .link-cta { color: var(--amber-deep); }
   text-align: left;
 }
 .dl-card h3 { font-size: 1.3rem; margin-bottom: 4px; }
+
+/* The hero's platform buttons jump here rather than downloading, so the
+   card they land on needs to clear the sticky header and say "this one". */
+.dl-card {
+  scroll-margin-top: 96px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dl-card:target {
+  border-color: var(--plat, var(--terracotta));
+  box-shadow: 0 0 0 4px var(--plat-glow, rgba(194, 96, 58, 0.2)), var(--shadow);
+}
 
 /* Version · size · requirement, in that order. Small, but people look for it. */
 .dl-meta {

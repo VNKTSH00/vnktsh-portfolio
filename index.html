@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venkatesh — Apps, made like a meal for friends</title>
-  <meta name="description" content="I build small, useful apps and give them away — free, no ads, no subscriptions, nothing collected. Software made the way you'd cook for friends." />
+  <title>Venkatesh — Web &amp; Mobile Apps, made like a meal for friends</title>
+  <meta name="description" content="Venkatesh builds websites, web apps and mobile apps. Some are given away free — no ads, nothing collected — and he takes on paid projects for businesses too." />
   <meta name="theme-color" content="#fbf6ec" />
   <link rel="canonical" href="https://vnktsh.com/" />
 
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="vnktsh" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vnktsh.com/" />
-  <meta property="og:title" content="Venkatesh — Apps, made like a meal for friends" />
+  <meta property="og:title" content="Venkatesh — Web &amp; Mobile Apps, made like a meal for friends" />
   <meta property="og:description" content="Free apps, no meter running. The joy of creation lies in the reaction of the guest, not the size of the tip." />
   <meta property="og:image" content="https://vnktsh.com/assets/images/og/og-site.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -41,6 +41,8 @@
     "@id": "https://vnktsh.com/#person",
     "name": "Venkatesh",
     "url": "https://vnktsh.com/about.html",
+    "jobTitle": "Web and mobile app developer",
+    "knowsAbout": ["Web development", "Web design", "Mobile app development", "Flutter", "Accessibility", "SEO"],
     "image": "https://vnktsh.com/assets/images/venkatesh-portrait.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/venkateshkathirvel/"
@@ -53,7 +55,7 @@
   <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
 </head>
 <body>
 
@@ -82,16 +84,18 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="container hero-inner">
-        <span class="eyebrow"><span class="dot"></span> The door's open — everything here is free</span>
+        <span class="eyebrow"><span class="dot"></span> The door's open — everything on this table is free</span>
         <h1>Pull up a <span class="gradient-text">chair</span>.</h1>
         <p class="lead">
-          I'm Venkatesh, and I build apps the way I'd cook for people I like — carefully,
-          then handed over with nothing attached. No subscription, no ads, no meter running.
-          The only thing I'm hoping to get back is your reaction.
+          I'm Venkatesh. I build websites and mobile apps the way I'd cook for people I
+          like — carefully, and never half-done. What's on this table is handed over with
+          nothing attached: no subscription, no ads, no meter running. The only thing I'm
+          hoping to get back is your reaction.
         </p>
         <div class="hero-actions">
           <a href="apps.html" class="btn btn-primary">See what I've made</a>
           <a href="about.html" class="btn btn-ghost">Why I give it away</a>
+          <a href="#bookings" class="btn btn-ghost">Work with me</a>
         </div>
       </div>
     </section>
@@ -298,8 +302,58 @@
       </div>
     </section>
 
+    <!-- ================= BOOKINGS (paid work) =================
+         Deliberately placed after the manifesto, the free app and the bill:
+         the free work is the argument, this is the "and I can be hired"
+         footnote. Keep the tone quiet — no pricing, no sales copy. -->
+    <section class="section reveal" id="bookings">
+      <div class="container">
+        <div class="section-head">
+          <h2>The kitchen also takes bookings</h2>
+          <p>
+            What's on this table is free, and it stays free. The same kitchen also cooks for
+            businesses — paid projects, made with the same care, for problems where
+            something real is riding on the result.
+          </p>
+        </div>
+        <div class="grid grid-2">
+          <a href="web.html" class="card">
+            <div class="icon-tile tile-terracotta">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2.5" y="4" width="19" height="16" rx="2" />
+                <path d="M2.5 9h19" />
+                <path d="M6 6.5h.01" />
+                <path d="M9 6.5h.01" />
+              </svg>
+            </div>
+            <h3>Websites &amp; web apps</h3>
+            <p>Designed and built by hand — a look that's yours, fast on any connection, and at home on a phone. You're looking at the sample.</p>
+            <span class="link-cta">What I build for the web →</span>
+          </a>
+          <a href="apps/money-book/index.html" class="card">
+            <div class="icon-tile tile-sage">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="2" width="12" height="20" rx="2.5" />
+                <path d="M10.5 18.5h3" />
+              </svg>
+            </div>
+            <h3>Mobile &amp; desktop apps</h3>
+            <p>One app shipped to Android, iPhone, Mac and Windows, working offline, with data that stays on the device. MoneyBook is the proof.</p>
+            <span class="link-cta">See it in MoneyBook →</span>
+          </a>
+        </div>
+        <div class="quiet-band" style="margin-top:56px;">
+          <p>
+            Giving things away is how I cook at home. When a business needs something
+            built, that's a commission — and I'm open to projects and full-time roles.
+          </p>
+          <a href="contact.html?about=work" class="btn btn-primary">Talk about a project</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= CTA ================= -->
-    <section class="section reveal">
+    <section class="section section-alt reveal">
       <div class="container">
         <div class="cta-band">
           <h2>So — how was it?</h2>

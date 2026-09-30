@@ -24,7 +24,7 @@
   <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
 </head>
 <body>
 
@@ -87,6 +87,7 @@
                 <option value="Telling you what I thought">Telling you what I thought</option>
                 <option value="Just saying hi">Just saying hi</option>
                 <option value="App idea">An app idea — build this for me</option>
+                <option value="Paid project or role">A paid project, or a role you're hiring for</option>
                 <option value="Issue / bug">An issue or bug I ran into</option>
                 <option value="Other">Something else</option>
               </select>
@@ -135,6 +136,14 @@
             who'd get some use out of it.
           </p>
 
+          <h2 style="margin-top:40px;">Hiring, or have a paid project?</h2>
+          <p>
+            The apps on this site are free, and they'll stay that way. Separately, I take on
+            paid work — websites, web apps and mobile apps for businesses — and I'm open to
+            full-time roles. Pick <strong>A paid project</strong> in the form and tell me
+            what you're building, or reach me on LinkedIn.
+          </p>
+
           <h2 style="margin-top:40px;">Have an app idea?</h2>
           <p>
             Seriously — if you're stuck solving a problem with a spreadsheet and ten open
@@ -164,5 +173,12 @@
 
   <script src="js/main.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // "Start a project" / "Work with me" links arrive as ?about=work —
+    // pre-pick the paid-work reason so nobody has to hunt for it.
+    if (new URLSearchParams(location.search).get('about') === 'work') {
+      document.getElementById('reason').value = 'Paid project or role';
+    }
+  </script>
 </body>
 </html>
