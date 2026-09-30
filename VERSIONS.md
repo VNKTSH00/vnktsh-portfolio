@@ -3,21 +3,57 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.12.1 — 1 October 2026
+
+Footer centred: on desktop the links sit exactly under 'Made to be shared, not sold.' (copyright left, Breeze right); on phones and tablets up to 820px the copyright, links and Breeze button stack, each centred. style.css ?v=26.
+
 ## v1.12.0 — 1 October 2026
 
 Breeze on/off button in the footer (desktop and phone) stops the leaves, sunlight and crossfade; phones: tap empty space to blow leaves away, flick the page to sway them.
+
+- **Desktop:** a "Breeze: on / off" button in the footer. Off stops the
+  leaves (even ones in the air), the sunlight and the page crossfade at
+  once, and puts the page back exactly as the plain site. The choice is
+  remembered in the visitor's browser (`vnktsh-breeze` in localStorage).
+- **Phone:** the leaves now run on touch screens too, with the same look.
+  A quick tap on empty background (not a link, button, picture, field or
+  words) blows the leaves within ~120px of the finger away; ones a little
+  further out shiver. A fast flick of the page makes every third leaf on
+  screen lean with it and sway back when it stops. The Breeze button is
+  shown on phones as well.
+- **Both:** reduced-motion users get none of it and no button.
+- Files: `js/main.js` (?v=6), `css/style.css` (?v=25).
 
 ## v1.11.0 — 1 October 2026
 
 A soft pool of sunlight follows the mouse on desktop, and pages crossfade into each other with the header held still. Separate from the leaves: restore v1.10.1 to drop just this.
 
+- **Desktop:** a warm light pool (720px, 15% amber at its centre) trails
+  the mouse and dims when it leaves the window.
+- **Desktop and phone:** moving between pages crossfades in 0.28s with the
+  header held still (cross-document view transitions; browsers without
+  them just navigate as before).
+- Files: `js/main.js` (?v=5), `css/style.css` (?v=24).
+
 ## v1.10.1 — 1 October 2026
 
 Leaves now start on every page (Apps and Contact kept them still in v1.10.0).
 
+- **Desktop:** fix - the leaves' first build call was missing, so they
+  only started on pages whose height changed as the fonts loaded.
+- Files: `js/main.js` (?v=4).
+
 ## v1.10.0 — 1 October 2026
 
 Leaves on the background vines blow away from the mouse on desktop and grow back later; phones, reduced-motion and every button unchanged.
+
+- **Desktop:** the vines motif is split in two - stems stay in the CSS
+  background, and each of its leaves is redrawn as its own SVG shape in
+  exactly the same spot (pixel-checked). Leaves near the cursor rustle;
+  ones it touches blow off the screen, tumbling, and grow back after
+  18-30s. Every leaf layer ignores the pointer, so no click is blocked.
+- **Phone:** unchanged (static vines).
+- Files: `js/main.js` now versioned (?v=3), `css/style.css` (?v=23).
 
 ## v1.9.4 — 30 September 2026
 

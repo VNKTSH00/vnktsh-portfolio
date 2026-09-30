@@ -1,5 +1,5 @@
 {
-  "version": "1.12.0",
-  "released": "2026-09-30T20:06:16Z",
-  "note": "Breeze on/off button in the footer (desktop and phone) stops the leaves, sunlight and crossfade; phones: tap empty space to blow leaves away, flick the page to sway them."
+  "version": "1.12.1",
+  "released": "2026-09-30T20:08:06Z",
+  "note": "Footer centred: on desktop the links sit exactly under 'Made to be shared, not sold.' (copyright left, Breeze right); on phones and tablets up to 820px the copyright, links and Breeze button stack, each centred. style.css ?v=26."
 }
