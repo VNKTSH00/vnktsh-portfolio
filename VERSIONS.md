@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.7.1 — 30 September 2026
+
+iPhone card back to 'coming soon' while an on-device iPhone version is built; synced web app and its privacy page taken down.
+
 ## v1.7.0 — 30 September 2026
 
 MoneyBook for iPhone: web app at app.vnktsh.com with Safari/Chrome install steps and its own privacy policy; download section is now a four-platform grid.
