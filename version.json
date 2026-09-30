@@ -1,5 +1,5 @@
 {
-  "version": "1.6.1",
-  "released": "2026-09-30T15:29:27Z",
-  "note": "MoneyBook download cards: all store buttons read 'coming soon'; Windows steps no longer list a missing feature."
+  "version": "1.7.0",
+  "released": "2026-09-30T15:48:48Z",
+  "note": "MoneyBook for iPhone: web app at app.vnktsh.com with Safari/Chrome install steps and its own privacy policy; download section is now a four-platform grid."
 }
