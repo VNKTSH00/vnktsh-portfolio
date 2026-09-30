@@ -1,5 +1,5 @@
 {
-  "version": "1.9.3",
-  "released": "2026-09-30T17:47:21Z",
-  "note": "Accent stripe: a bar of each platform's colour grows across the top of its MoneyBook download card on hover, and stays on the card a hero button jumped to."
+  "version": "1.9.4",
+  "released": "2026-09-30T18:04:50Z",
+  "note": "Download-card buttons (Download now, Open MoneyBook, coming soon) keep their text centred when it wraps on a phone."
 }

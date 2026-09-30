@@ -1544,6 +1544,7 @@ a.card:hover .link-cta { color: var(--amber-deep); }
 .btn-block {
   width: 100%;
   justify-content: center;
+  text-align: center; /* a label that wraps on a phone stays centred, not card-left */
   margin-bottom: 10px;
 }
 
