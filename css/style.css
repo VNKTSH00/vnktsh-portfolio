@@ -1355,6 +1355,46 @@ a.card:hover .link-cta { color: var(--amber-deep); }
   .has-code::before { display: none; }
 }
 
+/* ---------- Breeze ----------
+   Desktop only, set up by main.js: the vines' leaves come out of the
+   background image into these layers so each one can move on its own.
+   Both layers are inert to the pointer - nothing on the page can be
+   blocked by a leaf. .breeze-layer sits exactly where the tile used to
+   paint (z-index -1: under all content, like a background); .section-alt
+   isolates so its layer stays above its own linen fill. .breeze-sky is
+   where blown leaves tumble, above the words but below the header. */
+.breeze-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.breeze-layer.is-section { width: 100%; height: 100%; }
+.breeze-layer svg { position: absolute; overflow: hidden; }
+.breeze-layer .leaf { transition: opacity 1.8s ease; }
+.breeze-layer .leaf.is-gone { opacity: 0; transition: none; }
+.breeze .section-alt { isolation: isolate; }
+.breeze-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.breeze-sky svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 40px 40px;
+  will-change: transform;
+}
+.breeze-layer *, .breeze-sky * { pointer-events: none; }
+@media print {
+  .breeze-layer, .breeze-sky { display: none; }
+}
+
 /* ---------- Reveal on scroll ---------- */
 .reveal {
   opacity: 0;

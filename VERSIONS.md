@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.10.0 — 1 October 2026
+
+Leaves on the background vines blow away from the mouse on desktop and grow back later; phones, reduced-motion and every button unchanged.
+
 ## v1.9.4 — 30 September 2026
 
 Download-card buttons (Download now, Open MoneyBook, coming soon) keep their text centred when it wraps on a phone.
