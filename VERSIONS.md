@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.12.0 — 1 October 2026
+
+Breeze on/off button in the footer (desktop and phone) stops the leaves, sunlight and crossfade; phones: tap empty space to blow leaves away, flick the page to sway them.
+
 ## v1.11.0 — 1 October 2026
 
 A soft pool of sunlight follows the mouse on desktop, and pages crossfade into each other with the header held still. Separate from the leaves: restore v1.10.1 to drop just this.

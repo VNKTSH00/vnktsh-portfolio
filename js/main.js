@@ -140,23 +140,91 @@ document.addEventListener('DOMContentLoaded', () => {
      background, and every leaf is redrawn as its own SVG shape at exactly
      the spot the tile would have painted it. Both layers sit behind the
      content with pointer-events: none, so no click, hover or focus on the
-     page can ever land on a leaf. Wrapped so that if anything here fails,
-     the page simply keeps its still leaves. */
-  try {
-    setUpBreeze();
-  } catch (err) {
-    /* The static background is already in place. */
-  }
+     page can ever land on a leaf. If anything here fails, the page simply
+     keeps its still leaves.
 
-  /* Sunlight — a soft pool of afternoon light that follows the mouse
+     Sunlight — a soft pool of afternoon light that follows the mouse
      across the table. Desktop only, inert to the pointer, and moved with
-     a transform alone so it never costs a repaint. */
-  try {
-    setUpSunlight();
-  } catch (err) {
-    /* No light; nothing else depends on it. */
-  }
+     a transform alone so it never costs a repaint.
+
+     Both, plus the page crossfade, sit behind the "Breeze" switch in the
+     footer, so any visitor can turn the motion off (remembered in their
+     browser). */
+  setUpBreezeSwitch();
 });
+
+/* The visitor's choice, kept in their own browser: 'off', or unset for on. */
+const BREEZE_KEY = 'vnktsh-breeze';
+const breezeOn = () => {
+  try {
+    return localStorage.getItem(BREEZE_KEY) !== 'off';
+  } catch (err) {
+    return true;
+  }
+};
+
+/* The page crossfade is declared in CSS (the browser has to know before the
+   next page paints), so switching the breeze off cancels it here instead. */
+const skipCrossfade = (e) => {
+  if (e.viewTransition && !breezeOn()) e.viewTransition.skipTransition();
+};
+window.addEventListener('pageswap', skipCrossfade);
+window.addEventListener('pagereveal', skipCrossfade);
+
+function setUpBreezeSwitch() {
+  let stops = [];
+  const start = () => {
+    if (stops.length || !breezeOn()) return;
+    [setUpBreeze, setUpSunlight].forEach((setUp) => {
+      try {
+        const stop = setUp();
+        if (stop) stops.push(stop);
+      } catch (err) {
+        /* One effect failing leaves the page, and the other, alone. */
+      }
+    });
+  };
+  const stop = () => {
+    stops.forEach((fn) => {
+      try { fn(); } catch (err) { /* already gone */ }
+    });
+    stops = [];
+  };
+  start();
+
+  // Reduced motion already turns it all off, so the switch isn't shown then.
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spot = document.querySelector('.site-footer .footer-inner');
+  if (still || !spot) return;
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'breeze-toggle';
+  btn.title = 'Moving leaves, sunlight and page fades';
+  const render = () => {
+    const on = breezeOn();
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" ' +
+      'stroke-linecap="round" aria-hidden="true"><path d="M5 19 C 5 10 10 5 19 5 C 19 14 14 19 5 19 Z"/>' +
+      '<path d="M5 19 L 14 10"/></svg>' +
+      `<span>Breeze: ${on ? 'on' : 'off'}</span>`;
+  };
+  btn.addEventListener('click', () => {
+    const on = !breezeOn();
+    try {
+      if (on) localStorage.removeItem(BREEZE_KEY);
+      else localStorage.setItem(BREEZE_KEY, 'off');
+    } catch (err) {
+      /* Private browsing: it works for this page, just isn't remembered. */
+    }
+    render();
+    if (on) start();
+    else stop();
+  });
+  render();
+  spot.appendChild(btn);
+}
 
 function setUpSunlight() {
   const desktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -168,6 +236,7 @@ function setUpSunlight() {
   sun.setAttribute('aria-hidden', 'true');
   document.body.appendChild(sun);
 
+  const ac = new AbortController();
   let x = 0;
   let y = 0;
   let frame = 0;
@@ -181,17 +250,26 @@ function setUpSunlight() {
       sun.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       sun.classList.add('is-on');
     });
-  }, { passive: true });
+  }, { passive: true, signal: ac.signal });
   // Dim when the mouse leaves the window.
   document.addEventListener('mouseout', (e) => {
     if (!e.relatedTarget) sun.classList.remove('is-on');
-  });
+  }, { signal: ac.signal });
+
+  return () => {
+    ac.abort();
+    if (frame) cancelAnimationFrame(frame);
+    sun.remove();
+  };
 }
 
 function setUpBreeze() {
+  // With a mouse the leaves answer the cursor; on a touch screen they blow
+  // away from a tap on empty space and sway when the page is flicked.
   const desktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const touch = !desktop;
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!desktop || still || !window.ResizeObserver) return;
+  if (still || !window.ResizeObserver) return;
 
   const root = document.documentElement;
   const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -301,6 +379,11 @@ function setUpBreeze() {
       }
     });
 
+    // Leaves of the page's own layer that sit under a linen section are
+    // never seen; touch screens skip them when swaying.
+    const covers = surfaces.slice(1).map((s) => [s.x, s.y, s.x + s.width, s.y + s.height]);
+    const covered = (x, y) => covers.some(([x0, y0, x1, y1]) => x >= x0 && x <= x1 && y >= y0 && y <= y1);
+
     const nextGrid = new Map();
     const step = (deadline) => {
       if (id !== run) return;
@@ -320,6 +403,7 @@ function setUpBreeze() {
             x: s.x + tx + l.cx, y: s.y + ty + l.cy,  // centre, in document coordinates
             baseX: s.x + tx + l.bx, baseY: s.y + ty + l.by,
           };
+          leaf.covered = !s.parent && covered(leaf.x, leaf.y);
           const key = `${Math.floor(leaf.x / CELL)},${Math.floor(leaf.y / CELL)}`;
           if (!nextGrid.has(key)) nextGrid.set(key, []);
           nextGrid.get(key).push(leaf);
@@ -346,13 +430,15 @@ function setUpBreeze() {
   // Rebuild when the page changes shape (fonts landing, window resized).
   let lastSize = `${root.clientWidth}x${document.body.offsetHeight}`;
   let rebuildTimer;
-  new ResizeObserver(() => {
+  const ro = new ResizeObserver(() => {
     const size = `${root.clientWidth}x${document.body.offsetHeight}`;
     if (size === lastSize) return;
     lastSize = size;
     clearTimeout(rebuildTimer);
     rebuildTimer = setTimeout(build, 200);
-  }).observe(document.body);
+  });
+  ro.observe(document.body);
+  const ac = new AbortController();
 
   // --- Motion -----------------------------------------------------------
   const RUSTLE = 150;      // px - leaves inside this sway away from the cursor
@@ -379,9 +465,10 @@ function setUpBreeze() {
     pointer.t = now;
     pointer.moved = true;
     wake();
-  }, { passive: true });
+  }, { passive: true, signal: ac.signal });
 
-  const blow = (leaf, dx, dy, dist) => {
+  // gust: the air behind the push - the mouse's own movement, or a tap's.
+  const blow = (leaf, dx, dy, dist, gust = pointer) => {
     leaf.state = 'gone';
     leaf.el.removeAttribute('transform');
     leaf.el.classList.add('is-gone');
@@ -393,14 +480,14 @@ function setUpBreeze() {
     el.style.opacity = restOpacity;
     sky.appendChild(el);
 
-    const speed = Math.min(1500, Math.hypot(pointer.vx, pointer.vy));
+    const speed = Math.min(1500, Math.hypot(gust.vx, gust.vy));
     const push = 420 + Math.random() * 280 + speed * 0.35;
     flying.add({
       el, leaf,
       x: leaf.baseX - window.scrollX,
       y: leaf.baseY - window.scrollY,
-      vx: (dx / dist) * push + pointer.vx * 0.25,
-      vy: (dy / dist) * push + pointer.vy * 0.25,
+      vx: (dx / dist) * push + gust.vx * 0.25,
+      vy: (dy / dist) * push + gust.vy * 0.25,
       rot: leaf.rot,
       spin: (Math.random() - 0.5) * 600,
       alpha: restOpacity,
@@ -409,12 +496,81 @@ function setUpBreeze() {
     });
   };
 
+  const timers = new Set();
   const regrow = (leaf) => {
-    setTimeout(() => {
+    const id = setTimeout(() => {
+      timers.delete(id);
       leaf.el.classList.remove('is-gone');
       leaf.state = 'rest';
     }, REGROW_MIN + Math.random() * 12e3);
+    timers.add(id);
   };
+
+  // Every loose leaf within radius of a point in the document.
+  const nearby = (px, py, radius, fn) => {
+    for (let c = Math.floor((px - radius) / CELL); c <= Math.floor((px + radius) / CELL); c++) {
+      for (let r = Math.floor((py - radius) / CELL); r <= Math.floor((py + radius) / CELL); r++) {
+        const bucket = grid.get(`${c},${r}`);
+        if (!bucket) continue;
+        for (const leaf of bucket) {
+          if (leaf.state === 'gone') continue;
+          const dx = leaf.x - px;
+          const dy = leaf.y - py;
+          const dist = Math.hypot(dx, dy) || 1;
+          if (dist < radius) fn(leaf, dx, dy, dist);
+        }
+      }
+    }
+  };
+
+  // --- Touch screens ----------------------------------------------------
+  const TAP_BLOW = 120; // px - leaves this close to a tap blow away
+  const TAP_SWAY = 220; // px - and these just shiver
+  const scroll = { y: window.scrollY, v: 0, moved: false };
+  if (touch) {
+    // A quick tap on empty space - not a link, button, field, picture or
+    // words - blows the nearby leaves outward. This only listens: the tap
+    // still does exactly what it did before, and a swipe never counts.
+    const INTERACTIVE = 'a, button, input, textarea, select, label, summary, video, img, iframe, ' +
+      '[role="button"], [data-card-link], [data-gallery], [contenteditable], .site-header';
+    let down = null;
+    const opts = { passive: true, signal: ac.signal };
+    document.addEventListener('pointerdown', (e) => {
+      down = e.pointerType === 'touch' ? { x: e.clientX, y: e.clientY, t: e.timeStamp } : null;
+    }, opts);
+    document.addEventListener('pointercancel', () => { down = null; }, opts);
+    document.addEventListener('pointerup', (e) => {
+      if (!down || e.pointerType !== 'touch') return;
+      const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+      const quick = e.timeStamp - down.t < 400;
+      down = null;
+      if (moved > 10 || !quick) return;
+      const target = e.target;
+      if (!(target instanceof Element) || target.closest(INTERACTIVE)) return;
+      const words = [...target.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+      if (words || String(window.getSelection?.() || '').length) return;
+
+      const px = e.clientX + window.scrollX;
+      const py = e.clientY + window.scrollY;
+      nearby(px, py, TAP_SWAY, (leaf, dx, dy, dist) => {
+        if (dist < TAP_BLOW) {
+          const gust = 900 * (1 - dist / TAP_BLOW); // closer leaves fly harder
+          blow(leaf, dx, dy, dist, { vx: (dx / dist) * gust, vy: (dy / dist) * gust });
+        } else {
+          const side = Math.sign((leaf.x - leaf.baseX) * dy - (leaf.y - leaf.baseY) * dx) || 1;
+          leaf.spin += side * (1 - dist / TAP_SWAY) * 260;
+          swaying.add(leaf);
+        }
+      });
+      wake();
+    }, opts);
+
+    // A flick of the page sends a breeze through the leaves on screen.
+    window.addEventListener('scroll', () => {
+      scroll.moved = true;
+      wake();
+    }, opts);
+  }
 
   function tick(now) {
     frame = 0;
@@ -455,11 +611,42 @@ function setUpBreeze() {
       }
     }
 
-    // Swaying leaves spring back to rest.
+    // Touch: the faster the page moves, the further the leaves on screen
+    // lean with it; when it stops they sway back to rest.
+    for (const leaf of swaying) leaf.lean = 0;
+    if (touch) {
+      const y = window.scrollY;
+      const v = scroll.moved ? (y - scroll.y) / dt : 0;
+      scroll.v += (v - scroll.v) * (1 - Math.exp(-dt / 0.12));
+      scroll.y = y;
+      scroll.moved = false;
+      if (Math.abs(scroll.v) > 350) {
+        // Only every third leaf that's actually on screen, and never the
+        // ones hidden under a linen section: enough to read as a breeze,
+        // few enough that a phone keeps scrolling smoothly.
+        const strength = Math.sign(scroll.v) * Math.min(1, (Math.abs(scroll.v) - 350) / 2500);
+        const top = y;
+        const bottom = y + window.innerHeight;
+        for (let r = Math.floor(top / CELL); r <= Math.floor(bottom / CELL); r++) {
+          for (let c = 0; c <= Math.floor(root.clientWidth / CELL); c++) {
+            const bucket = grid.get(`${c},${r}`);
+            if (!bucket) continue;
+            for (const leaf of bucket) {
+              if (leaf.state === 'gone' || leaf.covered || leaf.shape % 3 || leaf.y < top || leaf.y > bottom) continue;
+              leaf.lean = strength * 14 * (0.55 + (leaf.shape % 7) / 12); // not all alike
+              swaying.add(leaf);
+            }
+          }
+        }
+      }
+      if (Math.abs(scroll.v) > 20) wake();
+    }
+
+    // Swaying leaves spring back to rest (or towards their lean).
     for (const leaf of swaying) {
-      leaf.spin += (-160 * leaf.rot - 9 * leaf.spin) * dt;
+      leaf.spin += (-160 * (leaf.rot - (leaf.lean || 0)) - 9 * leaf.spin) * dt;
       leaf.rot = Math.max(-35, Math.min(35, leaf.rot + leaf.spin * dt));
-      if (Math.abs(leaf.rot) < 0.05 && Math.abs(leaf.spin) < 0.5) {
+      if (!leaf.lean && Math.abs(leaf.rot) < 0.05 && Math.abs(leaf.spin) < 0.5) {
         leaf.rot = 0;
         leaf.spin = 0;
         leaf.el.removeAttribute('transform');
@@ -499,4 +686,23 @@ function setUpBreeze() {
 
     if (swaying.size || flying.size) wake();
   }
+
+  // Switched off: take every leaf layer away and give the background its
+  // full vines back, exactly as the page is without any of this.
+  return () => {
+    ac.abort();
+    ro.disconnect();
+    clearTimeout(rebuildTimer);
+    timers.forEach(clearTimeout);
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    run++; // stops a build that's still in progress
+    swaying.clear();
+    flying.clear();
+    layers.forEach((layer) => layer.remove());
+    layers = [];
+    sky.remove();
+    root.classList.remove('breeze');
+    root.style.removeProperty('--motif-vines');
+  };
 }
