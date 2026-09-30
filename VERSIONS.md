@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.9.1 — 30 September 2026
+
+Bump stylesheet to ?v=19: Cloudflare cached ?v=18 before the v1.9.0 deploy landed.
+
 ## v1.9.0 — 30 September 2026
 
 Platform-coloured MoneyBook buttons that jump to each download card; 'Save as Web App on iPhone'; nav links aligned with Say hello; one de-duplicated feature grid (no bank-statement import); Web page speaks to clients; home page adds websites and a quiet paid-work section.
