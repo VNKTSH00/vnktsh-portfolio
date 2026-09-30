@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.11.0 — 1 October 2026
+
+A soft pool of sunlight follows the mouse on desktop, and pages crossfade into each other with the header held still. Separate from the leaves: restore v1.10.1 to drop just this.
+
 ## v1.10.1 — 1 October 2026
 
 Leaves now start on every page (Apps and Contact kept them still in v1.10.0).

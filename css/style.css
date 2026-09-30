@@ -1395,6 +1395,44 @@ a.card:hover .link-cta { color: var(--amber-deep); }
   .breeze-layer, .breeze-sky { display: none; }
 }
 
+/* ---------- Sunlight ----------
+   Desktop only, placed by main.js: a pool of warm light that trails the
+   mouse. It sits over the sections (so the linen gets it too) but under
+   the header and the blown leaves, never takes the pointer, and is kept
+   faint enough that the contrast guarantees above still hold. */
+.sunlight {
+  position: fixed;
+  top: -360px;
+  left: -360px;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(248, 196, 104, 0.15) 0%,
+    rgba(248, 196, 104, 0.07) 32%,
+    rgba(248, 196, 104, 0) 68%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+.sunlight.is-on { opacity: 1; }
+@media print {
+  .sunlight { display: none; }
+}
+
+/* ---------- Page to page ----------
+   Moving between pages crossfades instead of blinking, and the header
+   holds still. Browsers without cross-document view transitions simply
+   navigate as before; reduced motion opts out. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: site-header; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 0.28s; }
+}
+
 /* ---------- Reveal on scroll ---------- */
 .reveal {
   opacity: 0;

@@ -147,7 +147,46 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {
     /* The static background is already in place. */
   }
+
+  /* Sunlight — a soft pool of afternoon light that follows the mouse
+     across the table. Desktop only, inert to the pointer, and moved with
+     a transform alone so it never costs a repaint. */
+  try {
+    setUpSunlight();
+  } catch (err) {
+    /* No light; nothing else depends on it. */
+  }
 });
+
+function setUpSunlight() {
+  const desktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!desktop || still) return;
+
+  const sun = document.createElement('div');
+  sun.className = 'sunlight';
+  sun.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(sun);
+
+  let x = 0;
+  let y = 0;
+  let frame = 0;
+  window.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+    x = e.clientX;
+    y = e.clientY;
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      sun.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      sun.classList.add('is-on');
+    });
+  }, { passive: true });
+  // Dim when the mouse leaves the window.
+  document.addEventListener('mouseout', (e) => {
+    if (!e.relatedTarget) sun.classList.remove('is-on');
+  });
+}
 
 function setUpBreeze() {
   const desktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
