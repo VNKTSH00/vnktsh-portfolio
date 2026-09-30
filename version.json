@@ -1,5 +1,5 @@
 {
-  "version": "1.10.0",
-  "released": "2026-09-30T18:34:40Z",
-  "note": "Leaves on the background vines blow away from the mouse on desktop and grow back later; phones, reduced-motion and every button unchanged."
+  "version": "1.10.1",
+  "released": "2026-09-30T18:39:45Z",
+  "note": "Leaves now start on every page (Apps and Contact kept them still in v1.10.0)."
 }

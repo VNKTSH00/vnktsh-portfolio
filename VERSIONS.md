@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.10.1 — 1 October 2026
+
+Leaves now start on every page (Apps and Contact kept them still in v1.10.0).
+
 ## v1.10.0 — 1 October 2026
 
 Leaves on the background vines blow away from the mouse on desktop and grow back later; phones, reduced-motion and every button unchanged.

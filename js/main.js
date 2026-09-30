@@ -302,6 +302,8 @@ function setUpBreeze() {
     idle(step);
   };
 
+  build();
+
   // Rebuild when the page changes shape (fonts landing, window resized).
   let lastSize = `${root.clientWidth}x${document.body.offsetHeight}`;
   let rebuildTimer;
