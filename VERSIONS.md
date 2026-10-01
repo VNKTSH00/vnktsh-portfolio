@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.12.2 — 1 October 2026
+
+MoneyBook 1.6.1 for Android, macOS and Windows: a physical keyboard's number pad now types into the amount field.
+
 ## v1.12.1 — 1 October 2026
 
 Footer centred: on desktop the links sit exactly under 'Made to be shared, not sold.' (copyright left, Breeze right); on phones and tablets up to 820px the copyright, links and Breeze button stack, each centred. style.css ?v=26.

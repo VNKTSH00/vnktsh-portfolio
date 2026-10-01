@@ -1,5 +1,5 @@
 {
-  "version": "1.12.1",
-  "released": "2026-09-30T20:08:06Z",
-  "note": "Footer centred: on desktop the links sit exactly under 'Made to be shared, not sold.' (copyright left, Breeze right); on phones and tablets up to 820px the copyright, links and Breeze button stack, each centred. style.css ?v=26."
+  "version": "1.12.2",
+  "released": "2026-10-01T17:26:51Z",
+  "note": "MoneyBook 1.6.1 for Android, macOS and Windows: a physical keyboard's number pad now types into the amount field."
 }
