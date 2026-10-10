@@ -1,5 +1,5 @@
 {
-  "version": "1.13.0",
-  "released": "2026-10-10T06:24:26Z",
-  "note": "MoneyBook on the web for every platform: Android, macOS and Windows cards now offer 'Or use it in your browser' next to the download; privacy policy widened to match."
+  "version": "1.13.1",
+  "released": "2026-10-10T06:59:04Z",
+  "note": "MoneyBook web-app links open in a new tab instead of replacing the site."
 }

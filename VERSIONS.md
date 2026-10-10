@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.13.1 — 10 October 2026
+
+MoneyBook web-app links open in a new tab instead of replacing the site.
+
 ## v1.13.0 — 10 October 2026
 
 MoneyBook on the web for every platform: Android, macOS and Windows cards now offer 'Or use it in your browser' next to the download; privacy policy widened to match.
