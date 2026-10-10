@@ -3,6 +3,10 @@
 Every entry here is a git tag. `./version.sh restore <version>` puts
 that exact state of the site back. Newest first.
 
+## v1.13.0 — 10 October 2026
+
+MoneyBook on the web for every platform: Android, macOS and Windows cards now offer 'Or use it in your browser' next to the download; privacy policy widened to match.
+
 ## v1.12.2 — 1 October 2026
 
 MoneyBook 1.6.1 for Android, macOS and Windows: a physical keyboard's number pad now types into the amount field.

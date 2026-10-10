@@ -1,5 +1,5 @@
 {
-  "version": "1.12.2",
-  "released": "2026-10-01T17:26:51Z",
-  "note": "MoneyBook 1.6.1 for Android, macOS and Windows: a physical keyboard's number pad now types into the amount field."
+  "version": "1.13.0",
+  "released": "2026-10-10T06:24:26Z",
+  "note": "MoneyBook on the web for every platform: Android, macOS and Windows cards now offer 'Or use it in your browser' next to the download; privacy policy widened to match."
 }

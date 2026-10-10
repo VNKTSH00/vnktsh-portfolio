@@ -30,7 +30,7 @@
     "description": "A free, offline personal finance app: log expenses and income, set budgets, see where your money goes, and export to CSV, Excel or PDF. No ads, no account, nothing collected.",
     "applicationCategory": "FinanceApplication",
     "applicationSubCategory": "Expense tracker",
-    "operatingSystem": "Android 7.0+, iOS 16.4+ (web app), macOS 12+, Windows 10+",
+    "operatingSystem": "Android 7.0+, iOS 16.4+ (web app), macOS 12+, Windows 10+, any modern browser (web app)",
     "softwareVersion": "1.6.1",
     "image": "https://vnktsh.com/assets/images/moneybook-icon.png",
     "screenshot": [
@@ -166,6 +166,10 @@
             Download for Windows
           </a>
         </div>
+        <p style="margin:20px auto 24px;max-width:580px;font-size:0.95rem;">
+          Rather not install anything? <a href="https://money-book-online.pages.dev" style="color:var(--link);font-weight:600;">Use MoneyBook in your browser →</a>
+          Same app, works on any device, still nothing sent anywhere.
+        </p>
         <div class="status-banner">
           <div class="icon-tile tile-amber">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
@@ -368,6 +372,15 @@
             <span class="btn btn-disabled btn-block" aria-disabled="true">
               On Google Play — coming soon
             </span>
+            <a href="https://money-book-online.pages.dev" class="btn btn-ghost btn-block">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 4h6v6" />
+                <path d="M20 4l-9 9" />
+                <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" />
+              </svg>
+              Or use it in your browser
+            </a>
+            <p class="dl-meta" style="margin:0 0 4px;">The browser version is the same app with nothing to install: open it in Chrome and choose <strong>Add to Home screen</strong>. Its data stays in that browser — move between versions with <strong>Settings → Back up everything</strong> and <strong>Restore from backup</strong>.</p>
 
             <ol class="dl-steps">
               <li>Tap <strong>Download now</strong>, then open the file when it finishes.</li>
@@ -387,6 +400,8 @@
           </div>
 
           <!-- ---------- iPhone (web app, money-book-online.pages.dev) ----------
+               The web app is also offered on the other three cards ("Or use it
+               in your browser"); iPhone has only this version.
                Built from the same app, running in the browser. Stores
                everything on the phone like the others: no server, no account,
                and a CSP that stops the page contacting any other site. -->
@@ -458,6 +473,15 @@
             <span class="btn btn-disabled btn-block" aria-disabled="true">
               On the Mac App Store — coming soon
             </span>
+            <a href="https://money-book-online.pages.dev" class="btn btn-ghost btn-block">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 4h6v6" />
+                <path d="M20 4l-9 9" />
+                <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" />
+              </svg>
+              Or use it in your browser
+            </a>
+            <p class="dl-meta" style="margin:0 0 4px;">The browser version is the same app with nothing to install, and none of the steps below. Your book stays in that browser — move between versions with <strong>Settings → Back up everything</strong> and <strong>Restore from backup</strong>.</p>
 
             <ol class="dl-steps">
               <li>Open the downloaded <strong>.dmg</strong> and drag <strong>Money Book</strong> into
@@ -499,6 +523,15 @@
             <span class="btn btn-disabled btn-block" aria-disabled="true">
               On the Microsoft Store — coming soon
             </span>
+            <a href="https://money-book-online.pages.dev" class="btn btn-ghost btn-block">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 4h6v6" />
+                <path d="M20 4l-9 9" />
+                <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" />
+              </svg>
+              Or use it in your browser
+            </a>
+            <p class="dl-meta" style="margin:0 0 4px;">The browser version is the same app with nothing to install, and no SmartScreen warning. In Chrome or Edge, the install icon in the address bar gives it its own window. Your book stays in that browser — move between versions with <strong>Settings → Back up everything</strong> and <strong>Restore from backup</strong>.</p>
 
             <ol class="dl-steps">
               <li>Open the downloaded <strong>MoneyBook-1.6.1-Setup.exe</strong>.</li>
@@ -543,8 +576,8 @@
             <h3>It can't reach the internet</h3>
             <p>
               The Android, Mac and Windows apps don't request internet access at all — Android
-              enforces that at the system level. On iPhone, the browser only lets MoneyBook talk
-              to the plain static site it loads from, which has nowhere to receive data. So there
+              enforces that at the system level. In the browser version (the one iPhones use), the
+              browser only lets MoneyBook talk to the plain static site it loads from, which has nowhere to receive data. So there
               is no version of this app that can quietly upload anything —
               not your transactions, not your receipts, not an analytics ping.
             </p>
